@@ -15,9 +15,9 @@ The system acquires environmental data—temperature, wind speed, and wind direc
 
 LCD Output:
 ```
-Azimuth: 	<azimuth>
+Azimuth: <azimuth>
 Wind speed: <windspeed>
-Temper: 	<temper>
+Temper: <temper>
 Duty cycle: <value>
 ```
 
