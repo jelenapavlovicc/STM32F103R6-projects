@@ -40,10 +40,11 @@ Virtuel Terminal Output:
     - Communication: Virtual terminal via USART1 (PB6/PB7)
 
 
-## Key Algorithms:
-    - Wind speed calculation: `speed = frequency × 2.4 km/h`
-    - Wind direction mapping: The analog voltage from the wind vane is mapped to a discrete azimuth value based on a predefined voltage-to-angle conversion function.
-    - Temperature conversion: `temperature [°C] = (ADC_value × V_REF × 100) / ADC_resolution`
+## Key Algorithms
+
+- Wind speed calculation: `speed = frequency × 2.4 km/h`
+- Wind direction mapping: The analog voltage from the wind vane is mapped to a discrete azimuth value based on a predefined voltage-to-angle conversion function.
+- Temperature conversion: `temperature [°C] = (ADC_value × V_REF × 100) / ADC_resolution`
 
 ## Simulation Notes
 
