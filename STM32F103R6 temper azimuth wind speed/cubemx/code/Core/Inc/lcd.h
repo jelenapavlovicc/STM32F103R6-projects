@@ -1,0 +1,76 @@
+/*
+ * lcd.h
+ *
+ *  Created on: Jun 16, 2025
+ *      Author: Korisnik
+ */
+
+#ifndef CORE_INC_LCD_H_
+#define CORE_INC_LCD_H_
+
+#include <stdint.h>
+#include "FreeRTOS.h"
+
+//28 masks
+#define LCD_INSTRUCTION_CLEAR_DISPLAY					0x01
+
+#define LCD_INSTRUCTION_RETURN_HOME						0x02
+
+#define LCD_INSTRUCTION_ENTRY_MODE_SET					0x04
+#define LCD_ENTRY_MODE_SET_INCREMENT_ADDR				0x02
+#define LCD_ENTRY_MODE_SET_DECREMENT_ADDR				0x00
+#define LCD_ENTRY_MODE_SET_DISPLAY_SHIFT_ON				0x01
+#define LCD_ENTRY_MODE_SET_DISPLAY_SHIFT_OFF			0x00
+
+#define LCD_INSTRUCTION_DISPLAY_CONTROL					0x08
+#define LCD_DISPLAY_CONTROL_DISPLAY_ON					0x04
+#define LCD_DISPLAY_CONTROL_DISPLAY_OFF					0x00
+#define LCD_DISPLAY_CONTROL_CURSOR_ON					0x02
+#define LCD_DISPLAY_CONTROL_CURSOR_OFF					0x00
+#define LCD_DISPLAY_CONTROL_BLINK_ON					0x01
+#define LCD_DISPLAY_CONTROL_BLINK_OFF					0x00
+
+#define LCD_INSTRUCTION_CURSOR_OR_DISPLAY_SHIFT			0x10
+#define LCD_CURSOR_OR_DISPLAY_SHIFT_DISPLAY_SHIFT		0x08
+#define LCD_CURSOR_OR_DISPLAY_SHIFT_CURSOR_MOVE			0x00
+#define LCD_CURSOR_OR_DISPLAY_SHIFT_SHIFT_RIGHT			0x04
+#define LCD_CURSOR_OR_DISPLAY_SHIFT_SHIFT_LEFT			0x00
+
+#define LCD_INSTRUCTION_FUNCTION_SET					0x20
+#define LCD_FUNCTION_SET_DATA_INTERFACE_8_BITS 			0x10
+#define LCD_FUNCTION_SET_DATA_INTERFACE_4_BITS			0x00
+#define LCD_FUNCTION_SET_2_DISPLAY_LINES				0x08
+#define LCD_FUNCTION_SET_1_DISPLAY_LINE					0x00
+#define LCD_FUNCTION_SET_CHARACTER_FONT_5x10_DOTS		0x04
+#define LCD_FUNCTION_SET_CHARACTER_FONT_5x8_DOTS		0x00
+
+#define LCD_INSTRUCTION_SET_CGRAM_ADDRESS				0x40
+
+#define LCD_INSTRUCTION_SET_DDRAM_ADDRESS				0x80
+
+typedef enum
+{
+	INSTRUCTION_REGISTER = 0, DATA_REGISTER
+} LCD_CommandReg;
+
+typedef uint8_t LCD_CommandVal;
+
+typedef struct
+{
+	LCD_CommandReg reg;
+	LCD_CommandVal val;
+} LCD_Command;
+
+extern void LCD_Init();
+
+extern void LCD_CommandEnqueue(LCD_CommandReg reg, LCD_CommandVal val);
+
+extern void LCD_CommandEnqueueFromISR(LCD_CommandReg reg, LCD_CommandVal val,
+		BaseType_t *pxHigherPriorityTaskWoken);
+
+//Write string to LCD memory (DDRAM) starting at the given address
+//addr - is an offset within the DDRAM memory
+//the function itself takes into account what address it is within the entire memory address space.
+extern void LCD_DisplayStringAtAddress(uint32_t addr, const char *string);
+
+#endif /* CORE_INC_LCD_H_ */

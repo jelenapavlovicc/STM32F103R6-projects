@@ -1,0 +1,76 @@
+# Eclipse
+/.settings/
+/bin/
+/build/
+
+# Proteus
+/proteus/*.IDX
+/proteus/*.ANF
+/proteus/*.PLT
+/proteus/*.FZP
+/proteus/*.FZPZ
+proteus/*.pdsbak
+proteus/Last Loaded proteus.pdsbak
+proteus/proteus.pdsprj.*.workspace
+
+# CubeMX
+*.ioc
+.project
+.cproject
+
+# Settings
+.settings/
+
+# Metadata
+.metadata/
+
+# Debug
+Debug/
+debug/
+Release/
+release
+
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+*.bin
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Backup files
+*.bak
+*.swp
