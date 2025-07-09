@@ -55,3 +55,14 @@ A control system based featuring:
 - MCU1 receives commands via virtual terminal (USART protocol) and transmit instructions to MCU2 (USART protocol)
 - MCU2 executes motor speed adjustments 
 - LCD display shows motor 1 speed (Line 1) and motor 2 speed (Line 2)
+
+## Temperature and Rain Monitoring and Fan Control System
+
+Directory: STM32F103R6_temperature_rain_monitoring_fan_control  
+Description:  
+- Ambient temperature monitoring via LM35 sensor (ADC-based)  
+- Rainfall intensity measurement using tipping-bucket rain gauge and monostable pulse shaping  
+- User-configurable temperature threshold input via matrix keypad  
+- Fan control using PWM based on temperature thresholds  
+- Bi-color LED behavior indicating safe or alert temperature states  
+- Real-time data display on both LCD and virtual terminal

@@ -1,0 +1,536 @@
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"driver_lcd.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text.LCD_Write,"ax",%progbits
+  16              		.align	1
+  17              		.arch armv7-m
+  18              		.syntax unified
+  19              		.thumb
+  20              		.thumb_func
+  21              		.fpu softvfp
+  23              	LCD_Write:
+  24              	.LVL0:
+  25              	.LFB69:
+  26              		.file 1 "../Core/Src/driver_lcd.c"
+   1:../Core/Src/driver_lcd.c **** 
+  27              		.loc 1 22 1 view -0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32              		.loc 1 23 2 view .LVU1
+  33              		.loc 1 23 20 is_stmt 0 view .LVU2
+  34 0000 01F00F01 		and	r1, r1, #15
+  35              	.LVL1:
+  36              		.loc 1 23 44 view .LVU3
+  37 0004 4001     		lsls	r0, r0, #5
+  38              	.LVL2:
+  39              		.loc 1 23 44 view .LVU4
+  40 0006 00F02000 		and	r0, r0, #32
+  41              		.loc 1 23 28 view .LVU5
+  42 000a 0143     		orrs	r1, r1, r0
+  43              		.loc 1 23 13 view .LVU6
+  44 000c 054B     		ldr	r3, .L2
+  45 000e D960     		str	r1, [r3, #12]
+  46              		.loc 1 25 2 is_stmt 1 view .LVU7
+  47              		.loc 1 25 13 is_stmt 0 view .LVU8
+  48 0010 DA68     		ldr	r2, [r3, #12]
+  49 0012 42F04002 		orr	r2, r2, #64
+  50 0016 DA60     		str	r2, [r3, #12]
+  51              		.loc 1 26 2 is_stmt 1 view .LVU9
+  52              		.loc 1 26 13 is_stmt 0 view .LVU10
+  53 0018 DA68     		ldr	r2, [r3, #12]
+  54 001a 22F04002 		bic	r2, r2, #64
+  55 001e DA60     		str	r2, [r3, #12]
+  56              		.loc 1 27 1 view .LVU11
+  57 0020 7047     		bx	lr
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s 			page 2
+
+
+  58              	.L3:
+  59 0022 00BF     		.align	2
+  60              	.L2:
+  61 0024 00100140 		.word	1073811456
+  62              		.cfi_endproc
+  63              	.LFE69:
+  65              		.section	.text.LCD_CommandInitiate,"ax",%progbits
+  66              		.align	1
+  67              		.syntax unified
+  68              		.thumb
+  69              		.thumb_func
+  70              		.fpu softvfp
+  72              	LCD_CommandInitiate:
+  73              	.LVL3:
+  74              	.LFB70:
+  75              		.loc 1 30 1 is_stmt 1 view -0
+  76              		.cfi_startproc
+  77              		@ args = 0, pretend = 0, frame = 0
+  78              		@ frame_needed = 0, uses_anonymous_args = 0
+  79              		.loc 1 30 1 is_stmt 0 view .LVU13
+  80 0000 70B5     		push	{r4, r5, r6, lr}
+  81              	.LCFI0:
+  82              		.cfi_def_cfa_offset 16
+  83              		.cfi_offset 4, -16
+  84              		.cfi_offset 5, -12
+  85              		.cfi_offset 6, -8
+  86              		.cfi_offset 14, -4
+  87 0002 0546     		mov	r5, r0
+  88 0004 0C46     		mov	r4, r1
+  89              		.loc 1 31 2 is_stmt 1 view .LVU14
+  90 0006 0909     		lsrs	r1, r1, #4
+  91              	.LVL4:
+  92              		.loc 1 31 2 is_stmt 0 view .LVU15
+  93 0008 044E     		ldr	r6, .L6
+  94 000a B047     		blx	r6
+  95              	.LVL5:
+  96              		.loc 1 32 2 is_stmt 1 view .LVU16
+  97 000c 2146     		mov	r1, r4
+  98 000e 2846     		mov	r0, r5
+  99 0010 B047     		blx	r6
+ 100              	.LVL6:
+ 101              		.loc 1 34 2 view .LVU17
+ 102 0012 0220     		movs	r0, #2
+ 103 0014 024B     		ldr	r3, .L6+4
+ 104 0016 9847     		blx	r3
+ 105              	.LVL7:
+ 106              		.loc 1 35 1 is_stmt 0 view .LVU18
+ 107 0018 70BD     		pop	{r4, r5, r6, pc}
+ 108              	.L7:
+ 109 001a 00BF     		.align	2
+ 110              	.L6:
+ 111 001c 00000000 		.word	LCD_Write
+ 112 0020 00000000 		.word	vTaskDelay
+ 113              		.cfi_endproc
+ 114              	.LFE70:
+ 116              		.section	.text.LCD_Task,"ax",%progbits
+ 117              		.align	1
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s 			page 3
+
+
+ 118              		.syntax unified
+ 119              		.thumb
+ 120              		.thumb_func
+ 121              		.fpu softvfp
+ 123              	LCD_Task:
+ 124              	.LVL8:
+ 125              	.LFB71:
+ 126              		.loc 1 38 1 is_stmt 1 view -0
+ 127              		.cfi_startproc
+ 128              		@ Volatile: function does not return.
+ 129              		@ args = 0, pretend = 0, frame = 8
+ 130              		@ frame_needed = 0, uses_anonymous_args = 0
+ 131              		.loc 1 38 1 is_stmt 0 view .LVU20
+ 132 0000 00B5     		push	{lr}
+ 133              	.LCFI1:
+ 134              		.cfi_def_cfa_offset 4
+ 135              		.cfi_offset 14, -4
+ 136 0002 83B0     		sub	sp, sp, #12
+ 137              	.LCFI2:
+ 138              		.cfi_def_cfa_offset 16
+ 139              		.loc 1 40 2 is_stmt 1 view .LVU21
+ 140 0004 1420     		movs	r0, #20
+ 141              	.LVL9:
+ 142              		.loc 1 40 2 is_stmt 0 view .LVU22
+ 143 0006 114C     		ldr	r4, .L11
+ 144 0008 A047     		blx	r4
+ 145              	.LVL10:
+ 146              		.loc 1 43 2 is_stmt 1 view .LVU23
+ 147 000a 0221     		movs	r1, #2
+ 148 000c 0020     		movs	r0, #0
+ 149 000e 104B     		ldr	r3, .L11+4
+ 150 0010 9847     		blx	r3
+ 151              	.LVL11:
+ 152              		.loc 1 45 2 view .LVU24
+ 153 0012 0220     		movs	r0, #2
+ 154 0014 A047     		blx	r4
+ 155              	.LVL12:
+ 156              		.loc 1 48 2 view .LVU25
+ 157 0016 2821     		movs	r1, #40
+ 158 0018 0020     		movs	r0, #0
+ 159 001a 0E4C     		ldr	r4, .L11+8
+ 160 001c A047     		blx	r4
+ 161              	.LVL13:
+ 162              		.loc 1 54 2 view .LVU26
+ 163 001e 0C21     		movs	r1, #12
+ 164 0020 0020     		movs	r0, #0
+ 165 0022 A047     		blx	r4
+ 166              	.LVL14:
+ 167              		.loc 1 60 2 view .LVU27
+ 168 0024 0621     		movs	r1, #6
+ 169 0026 0020     		movs	r0, #0
+ 170 0028 A047     		blx	r4
+ 171              	.LVL15:
+ 172              		.loc 1 65 2 view .LVU28
+ 173 002a 0221     		movs	r1, #2
+ 174 002c 0020     		movs	r0, #0
+ 175 002e A047     		blx	r4
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s 			page 4
+
+
+ 176              	.LVL16:
+ 177              	.L9:
+ 178              		.loc 1 68 2 discriminator 1 view .LVU29
+ 179              		.loc 1 69 2 discriminator 1 view .LVU30
+ 180              		.loc 1 71 3 discriminator 1 view .LVU31
+ 181 0030 4FF0FF32 		mov	r2, #-1
+ 182 0034 01A9     		add	r1, sp, #4
+ 183 0036 084B     		ldr	r3, .L11+12
+ 184 0038 1868     		ldr	r0, [r3]
+ 185 003a 084B     		ldr	r3, .L11+16
+ 186 003c 9847     		blx	r3
+ 187              	.LVL17:
+ 188              		.loc 1 72 3 discriminator 1 view .LVU32
+ 189 003e 9DF80510 		ldrb	r1, [sp, #5]	@ zero_extendqisi2
+ 190 0042 9DF80400 		ldrb	r0, [sp, #4]	@ zero_extendqisi2
+ 191 0046 034B     		ldr	r3, .L11+8
+ 192 0048 9847     		blx	r3
+ 193              	.LVL18:
+ 194              		.loc 1 69 8 discriminator 1 view .LVU33
+ 195 004a F1E7     		b	.L9
+ 196              	.L12:
+ 197              		.align	2
+ 198              	.L11:
+ 199 004c 00000000 		.word	vTaskDelay
+ 200 0050 00000000 		.word	LCD_Write
+ 201 0054 00000000 		.word	LCD_CommandInitiate
+ 202 0058 00000000 		.word	.LANCHOR0
+ 203 005c 00000000 		.word	xQueueReceive
+ 204              		.cfi_endproc
+ 205              	.LFE71:
+ 207              		.section	.rodata.LCD_Init.str1.4,"aMS",%progbits,1
+ 208              		.align	2
+ 209              	.LC0:
+ 210 0000 4C43445F 		.ascii	"LCD_Task\000"
+ 210      5461736B 
+ 210      00
+ 211              		.section	.text.LCD_Init,"ax",%progbits
+ 212              		.align	1
+ 213              		.global	LCD_Init
+ 214              		.syntax unified
+ 215              		.thumb
+ 216              		.thumb_func
+ 217              		.fpu softvfp
+ 219              	LCD_Init:
+ 220              	.LFB72:
+ 221              		.loc 1 77 1 view -0
+ 222              		.cfi_startproc
+ 223              		@ args = 0, pretend = 0, frame = 0
+ 224              		@ frame_needed = 0, uses_anonymous_args = 0
+ 225 0000 30B5     		push	{r4, r5, lr}
+ 226              	.LCFI3:
+ 227              		.cfi_def_cfa_offset 12
+ 228              		.cfi_offset 4, -12
+ 229              		.cfi_offset 5, -8
+ 230              		.cfi_offset 14, -4
+ 231 0002 83B0     		sub	sp, sp, #12
+ 232              	.LCFI4:
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s 			page 5
+
+
+ 233              		.cfi_def_cfa_offset 24
+ 234              		.loc 1 78 2 view .LVU35
+ 235 0004 094B     		ldr	r3, .L15
+ 236 0006 0193     		str	r3, [sp, #4]
+ 237 0008 0224     		movs	r4, #2
+ 238 000a 0094     		str	r4, [sp]
+ 239 000c 0023     		movs	r3, #0
+ 240 000e 8022     		movs	r2, #128
+ 241 0010 0749     		ldr	r1, .L15+4
+ 242 0012 0848     		ldr	r0, .L15+8
+ 243 0014 084D     		ldr	r5, .L15+12
+ 244 0016 A847     		blx	r5
+ 245              	.LVL19:
+ 246              		.loc 1 79 2 view .LVU36
+ 247              		.loc 1 79 20 is_stmt 0 view .LVU37
+ 248 0018 0022     		movs	r2, #0
+ 249 001a 2146     		mov	r1, r4
+ 250 001c 4020     		movs	r0, #64
+ 251 001e 074B     		ldr	r3, .L15+16
+ 252 0020 9847     		blx	r3
+ 253              	.LVL20:
+ 254              		.loc 1 79 18 view .LVU38
+ 255 0022 074B     		ldr	r3, .L15+20
+ 256 0024 1860     		str	r0, [r3]
+ 257              		.loc 1 80 1 view .LVU39
+ 258 0026 03B0     		add	sp, sp, #12
+ 259              	.LCFI5:
+ 260              		.cfi_def_cfa_offset 12
+ 261              		@ sp needed
+ 262 0028 30BD     		pop	{r4, r5, pc}
+ 263              	.L16:
+ 264 002a 00BF     		.align	2
+ 265              	.L15:
+ 266 002c 00000000 		.word	.LANCHOR1
+ 267 0030 00000000 		.word	.LC0
+ 268 0034 00000000 		.word	LCD_Task
+ 269 0038 00000000 		.word	xTaskCreate
+ 270 003c 00000000 		.word	xQueueGenericCreate
+ 271 0040 00000000 		.word	.LANCHOR0
+ 272              		.cfi_endproc
+ 273              	.LFE72:
+ 275              		.section	.text.LCD_CommandEnqueue,"ax",%progbits
+ 276              		.align	1
+ 277              		.global	LCD_CommandEnqueue
+ 278              		.syntax unified
+ 279              		.thumb
+ 280              		.thumb_func
+ 281              		.fpu softvfp
+ 283              	LCD_CommandEnqueue:
+ 284              	.LVL21:
+ 285              	.LFB73:
+ 286              		.loc 1 85 1 is_stmt 1 view -0
+ 287              		.cfi_startproc
+ 288              		@ args = 0, pretend = 0, frame = 8
+ 289              		@ frame_needed = 0, uses_anonymous_args = 0
+ 290              		.loc 1 85 1 is_stmt 0 view .LVU41
+ 291 0000 10B5     		push	{r4, lr}
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s 			page 6
+
+
+ 292              	.LCFI6:
+ 293              		.cfi_def_cfa_offset 8
+ 294              		.cfi_offset 4, -8
+ 295              		.cfi_offset 14, -4
+ 296 0002 82B0     		sub	sp, sp, #8
+ 297              	.LCFI7:
+ 298              		.cfi_def_cfa_offset 16
+ 299              		.loc 1 86 2 is_stmt 1 view .LVU42
+ 300              		.loc 1 86 14 is_stmt 0 view .LVU43
+ 301 0004 8DF80400 		strb	r0, [sp, #4]
+ 302 0008 8DF80510 		strb	r1, [sp, #5]
+ 303              		.loc 1 88 2 is_stmt 1 view .LVU44
+ 304 000c 0023     		movs	r3, #0
+ 305 000e 4FF0FF32 		mov	r2, #-1
+ 306 0012 01A9     		add	r1, sp, #4
+ 307              	.LVL22:
+ 308              		.loc 1 88 2 is_stmt 0 view .LVU45
+ 309 0014 0248     		ldr	r0, .L19
+ 310              	.LVL23:
+ 311              		.loc 1 88 2 view .LVU46
+ 312 0016 0068     		ldr	r0, [r0]
+ 313 0018 024C     		ldr	r4, .L19+4
+ 314 001a A047     		blx	r4
+ 315              	.LVL24:
+ 316              		.loc 1 89 1 view .LVU47
+ 317 001c 02B0     		add	sp, sp, #8
+ 318              	.LCFI8:
+ 319              		.cfi_def_cfa_offset 8
+ 320              		@ sp needed
+ 321 001e 10BD     		pop	{r4, pc}
+ 322              	.L20:
+ 323              		.align	2
+ 324              	.L19:
+ 325 0020 00000000 		.word	.LANCHOR0
+ 326 0024 00000000 		.word	xQueueGenericSend
+ 327              		.cfi_endproc
+ 328              	.LFE73:
+ 330              		.section	.text.LCD_CommandEnqueueFromISR,"ax",%progbits
+ 331              		.align	1
+ 332              		.global	LCD_CommandEnqueueFromISR
+ 333              		.syntax unified
+ 334              		.thumb
+ 335              		.thumb_func
+ 336              		.fpu softvfp
+ 338              	LCD_CommandEnqueueFromISR:
+ 339              	.LVL25:
+ 340              	.LFB74:
+ 341              		.loc 1 93 1 is_stmt 1 view -0
+ 342              		.cfi_startproc
+ 343              		@ args = 0, pretend = 0, frame = 8
+ 344              		@ frame_needed = 0, uses_anonymous_args = 0
+ 345              		.loc 1 93 1 is_stmt 0 view .LVU49
+ 346 0000 10B5     		push	{r4, lr}
+ 347              	.LCFI9:
+ 348              		.cfi_def_cfa_offset 8
+ 349              		.cfi_offset 4, -8
+ 350              		.cfi_offset 14, -4
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s 			page 7
+
+
+ 351 0002 82B0     		sub	sp, sp, #8
+ 352              	.LCFI10:
+ 353              		.cfi_def_cfa_offset 16
+ 354              		.loc 1 94 2 is_stmt 1 view .LVU50
+ 355              		.loc 1 94 14 is_stmt 0 view .LVU51
+ 356 0004 8DF80400 		strb	r0, [sp, #4]
+ 357 0008 8DF80510 		strb	r1, [sp, #5]
+ 358              		.loc 1 96 2 is_stmt 1 view .LVU52
+ 359 000c 0023     		movs	r3, #0
+ 360 000e 01A9     		add	r1, sp, #4
+ 361              	.LVL26:
+ 362              		.loc 1 96 2 is_stmt 0 view .LVU53
+ 363 0010 0248     		ldr	r0, .L23
+ 364              	.LVL27:
+ 365              		.loc 1 96 2 view .LVU54
+ 366 0012 0068     		ldr	r0, [r0]
+ 367 0014 024C     		ldr	r4, .L23+4
+ 368 0016 A047     		blx	r4
+ 369              	.LVL28:
+ 370              		.loc 1 97 1 view .LVU55
+ 371 0018 02B0     		add	sp, sp, #8
+ 372              	.LCFI11:
+ 373              		.cfi_def_cfa_offset 8
+ 374              		@ sp needed
+ 375 001a 10BD     		pop	{r4, pc}
+ 376              	.L24:
+ 377              		.align	2
+ 378              	.L23:
+ 379 001c 00000000 		.word	.LANCHOR0
+ 380 0020 00000000 		.word	xQueueGenericSendFromISR
+ 381              		.cfi_endproc
+ 382              	.LFE74:
+ 384              		.section	.text.LCD_DisplayStringAtAddress,"ax",%progbits
+ 385              		.align	1
+ 386              		.global	LCD_DisplayStringAtAddress
+ 387              		.syntax unified
+ 388              		.thumb
+ 389              		.thumb_func
+ 390              		.fpu softvfp
+ 392              	LCD_DisplayStringAtAddress:
+ 393              	.LVL29:
+ 394              	.LFB75:
+ 395              		.loc 1 103 1 is_stmt 1 view -0
+ 396              		.cfi_startproc
+ 397              		@ args = 0, pretend = 0, frame = 0
+ 398              		@ frame_needed = 0, uses_anonymous_args = 0
+ 399              		.loc 1 103 1 is_stmt 0 view .LVU57
+ 400 0000 38B5     		push	{r3, r4, r5, lr}
+ 401              	.LCFI12:
+ 402              		.cfi_def_cfa_offset 16
+ 403              		.cfi_offset 3, -16
+ 404              		.cfi_offset 4, -12
+ 405              		.cfi_offset 5, -8
+ 406              		.cfi_offset 14, -4
+ 407 0002 0D46     		mov	r5, r1
+ 408              		.loc 1 104 2 is_stmt 1 view .LVU58
+ 409 0004 60F07F01 		orn	r1, r0, #127
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s 			page 8
+
+
+ 410              	.LVL30:
+ 411              		.loc 1 104 2 is_stmt 0 view .LVU59
+ 412 0008 C9B2     		uxtb	r1, r1
+ 413 000a 0020     		movs	r0, #0
+ 414              	.LVL31:
+ 415              		.loc 1 104 2 view .LVU60
+ 416 000c 074B     		ldr	r3, .L29
+ 417 000e 9847     		blx	r3
+ 418              	.LVL32:
+ 419              		.loc 1 107 2 is_stmt 1 view .LVU61
+ 420              	.LBB2:
+ 421              		.loc 1 107 7 view .LVU62
+ 422              		.loc 1 107 16 is_stmt 0 view .LVU63
+ 423 0010 0024     		movs	r4, #0
+ 424              		.loc 1 107 2 view .LVU64
+ 425 0012 04E0     		b	.L26
+ 426              	.LVL33:
+ 427              	.L27:
+ 428              		.loc 1 109 3 is_stmt 1 discriminator 3 view .LVU65
+ 429 0014 295D     		ldrb	r1, [r5, r4]	@ zero_extendqisi2
+ 430 0016 0120     		movs	r0, #1
+ 431 0018 044B     		ldr	r3, .L29
+ 432 001a 9847     		blx	r3
+ 433              	.LVL34:
+ 434              		.loc 1 107 43 discriminator 3 view .LVU66
+ 435              		.loc 1 107 44 is_stmt 0 discriminator 3 view .LVU67
+ 436 001c 0134     		adds	r4, r4, #1
+ 437              	.LVL35:
+ 438              	.L26:
+ 439              		.loc 1 107 23 is_stmt 1 discriminator 1 view .LVU68
+ 440              		.loc 1 107 27 is_stmt 0 discriminator 1 view .LVU69
+ 441 001e 2846     		mov	r0, r5
+ 442 0020 034B     		ldr	r3, .L29+4
+ 443 0022 9847     		blx	r3
+ 444              	.LVL36:
+ 445              		.loc 1 107 2 discriminator 1 view .LVU70
+ 446 0024 A042     		cmp	r0, r4
+ 447 0026 F5D8     		bhi	.L27
+ 448              	.LBE2:
+ 449              		.loc 1 111 1 view .LVU71
+ 450 0028 38BD     		pop	{r3, r4, r5, pc}
+ 451              	.LVL37:
+ 452              	.L30:
+ 453              		.loc 1 111 1 view .LVU72
+ 454 002a 00BF     		.align	2
+ 455              	.L29:
+ 456 002c 00000000 		.word	LCD_CommandEnqueue
+ 457 0030 00000000 		.word	strlen
+ 458              		.cfi_endproc
+ 459              	.LFE75:
+ 461              		.section	.bss.LCD_QueueHandle,"aw",%nobits
+ 462              		.align	2
+ 463              		.set	.LANCHOR0,. + 0
+ 466              	LCD_QueueHandle:
+ 467 0000 00000000 		.space	4
+ 468              		.section	.bss.LCD_TaskHandle,"aw",%nobits
+ 469              		.align	2
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s 			page 9
+
+
+ 470              		.set	.LANCHOR1,. + 0
+ 473              	LCD_TaskHandle:
+ 474 0000 00000000 		.space	4
+ 475              		.text
+ 476              	.Letext0:
+ 477              		.file 2 "../c:\\users\\korisnik\\desktop\\etf\\4. godina\\mips\\gnu mcu\\arm-none-eabi-gcc-10.2.1-
+ 478              		.file 3 "../c:\\users\\korisnik\\desktop\\etf\\4. godina\\mips\\gnu mcu\\arm-none-eabi-gcc-10.2.1-
+ 479              		.file 4 "../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h"
+ 480              		.file 5 "../Core/Inc/driver_lcd.h"
+ 481              		.file 6 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103x6.h"
+ 482              		.file 7 "../Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 483              		.file 8 "../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
+ 484              		.file 9 "../<built-in>"
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s 			page 10
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 driver_lcd.c
+C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s:16     .text.LCD_Write:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s:23     .text.LCD_Write:0000000000000000 LCD_Write
+C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s:61     .text.LCD_Write:0000000000000024 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s:66     .text.LCD_CommandInitiate:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s:72     .text.LCD_CommandInitiate:0000000000000000 LCD_CommandInitiate
+C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s:111    .text.LCD_CommandInitiate:000000000000001c $d
+C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s:117    .text.LCD_Task:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s:123    .text.LCD_Task:0000000000000000 LCD_Task
+C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s:199    .text.LCD_Task:000000000000004c $d
+C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s:208    .rodata.LCD_Init.str1.4:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s:212    .text.LCD_Init:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s:219    .text.LCD_Init:0000000000000000 LCD_Init
+C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s:266    .text.LCD_Init:000000000000002c $d
+C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s:276    .text.LCD_CommandEnqueue:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s:283    .text.LCD_CommandEnqueue:0000000000000000 LCD_CommandEnqueue
+C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s:325    .text.LCD_CommandEnqueue:0000000000000020 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s:331    .text.LCD_CommandEnqueueFromISR:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s:338    .text.LCD_CommandEnqueueFromISR:0000000000000000 LCD_CommandEnqueueFromISR
+C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s:379    .text.LCD_CommandEnqueueFromISR:000000000000001c $d
+C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s:385    .text.LCD_DisplayStringAtAddress:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s:392    .text.LCD_DisplayStringAtAddress:0000000000000000 LCD_DisplayStringAtAddress
+C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s:456    .text.LCD_DisplayStringAtAddress:000000000000002c $d
+C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s:462    .bss.LCD_QueueHandle:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s:466    .bss.LCD_QueueHandle:0000000000000000 LCD_QueueHandle
+C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s:469    .bss.LCD_TaskHandle:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccBsAeSX.s:473    .bss.LCD_TaskHandle:0000000000000000 LCD_TaskHandle
+
+UNDEFINED SYMBOLS
+vTaskDelay
+xQueueReceive
+xTaskCreate
+xQueueGenericCreate
+xQueueGenericSend
+xQueueGenericSendFromISR
+strlen

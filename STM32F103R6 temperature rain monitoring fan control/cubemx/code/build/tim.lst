@@ -1,0 +1,862 @@
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"tim.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text.MX_TIM2_Init,"ax",%progbits
+  16              		.align	1
+  17              		.global	MX_TIM2_Init
+  18              		.arch armv7-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	MX_TIM2_Init:
+  25              	.LFB65:
+  26              		.file 1 "../Core/Src/tim.c"
+   1:../Core/Src/tim.c **** 
+  27              		.loc 1 32 1 view -0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 40
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31 0000 00B5     		push	{lr}
+  32              	.LCFI0:
+  33              		.cfi_def_cfa_offset 4
+  34              		.cfi_offset 14, -4
+  35 0002 8BB0     		sub	sp, sp, #44
+  36              	.LCFI1:
+  37              		.cfi_def_cfa_offset 48
+  38              		.loc 1 38 3 view .LVU1
+  39              		.loc 1 38 26 is_stmt 0 view .LVU2
+  40 0004 0023     		movs	r3, #0
+  41 0006 0693     		str	r3, [sp, #24]
+  42 0008 0793     		str	r3, [sp, #28]
+  43 000a 0893     		str	r3, [sp, #32]
+  44 000c 0993     		str	r3, [sp, #36]
+  45              		.loc 1 39 3 is_stmt 1 view .LVU3
+  46              		.loc 1 39 27 is_stmt 0 view .LVU4
+  47 000e 0493     		str	r3, [sp, #16]
+  48 0010 0593     		str	r3, [sp, #20]
+  49              		.loc 1 40 3 is_stmt 1 view .LVU5
+  50              		.loc 1 40 22 is_stmt 0 view .LVU6
+  51 0012 0093     		str	r3, [sp]
+  52 0014 0193     		str	r3, [sp, #4]
+  53 0016 0293     		str	r3, [sp, #8]
+  54 0018 0393     		str	r3, [sp, #12]
+  55              		.loc 1 45 3 is_stmt 1 view .LVU7
+  56              		.loc 1 45 18 is_stmt 0 view .LVU8
+  57 001a 2048     		ldr	r0, .L13
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s 			page 2
+
+
+  58 001c 4FF08042 		mov	r2, #1073741824
+  59 0020 0260     		str	r2, [r0]
+  60              		.loc 1 46 3 is_stmt 1 view .LVU9
+  61              		.loc 1 46 24 is_stmt 0 view .LVU10
+  62 0022 4360     		str	r3, [r0, #4]
+  63              		.loc 1 47 3 is_stmt 1 view .LVU11
+  64              		.loc 1 47 26 is_stmt 0 view .LVU12
+  65 0024 8360     		str	r3, [r0, #8]
+  66              		.loc 1 48 3 is_stmt 1 view .LVU13
+  67              		.loc 1 48 21 is_stmt 0 view .LVU14
+  68 0026 4FF6FF72 		movw	r2, #65535
+  69 002a C260     		str	r2, [r0, #12]
+  70              		.loc 1 49 3 is_stmt 1 view .LVU15
+  71              		.loc 1 49 28 is_stmt 0 view .LVU16
+  72 002c 0361     		str	r3, [r0, #16]
+  73              		.loc 1 50 3 is_stmt 1 view .LVU17
+  74              		.loc 1 50 32 is_stmt 0 view .LVU18
+  75 002e 8361     		str	r3, [r0, #24]
+  76              		.loc 1 51 3 is_stmt 1 view .LVU19
+  77              		.loc 1 51 7 is_stmt 0 view .LVU20
+  78 0030 1B4B     		ldr	r3, .L13+4
+  79 0032 9847     		blx	r3
+  80              	.LVL0:
+  81              		.loc 1 51 6 view .LVU21
+  82 0034 10BB     		cbnz	r0, .L8
+  83              	.L2:
+  84              		.loc 1 55 3 is_stmt 1 view .LVU22
+  85              		.loc 1 55 34 is_stmt 0 view .LVU23
+  86 0036 4FF48053 		mov	r3, #4096
+  87 003a 0693     		str	r3, [sp, #24]
+  88              		.loc 1 56 3 is_stmt 1 view .LVU24
+  89              		.loc 1 56 7 is_stmt 0 view .LVU25
+  90 003c 06A9     		add	r1, sp, #24
+  91 003e 1748     		ldr	r0, .L13
+  92 0040 184B     		ldr	r3, .L13+8
+  93 0042 9847     		blx	r3
+  94              	.LVL1:
+  95              		.loc 1 56 6 view .LVU26
+  96 0044 E8B9     		cbnz	r0, .L9
+  97              	.L3:
+  98              		.loc 1 60 3 is_stmt 1 view .LVU27
+  99              		.loc 1 60 7 is_stmt 0 view .LVU28
+ 100 0046 1548     		ldr	r0, .L13
+ 101 0048 174B     		ldr	r3, .L13+12
+ 102 004a 9847     		blx	r3
+ 103              	.LVL2:
+ 104              		.loc 1 60 6 view .LVU29
+ 105 004c E0B9     		cbnz	r0, .L10
+ 106              	.L4:
+ 107              		.loc 1 64 3 is_stmt 1 view .LVU30
+ 108              		.loc 1 64 37 is_stmt 0 view .LVU31
+ 109 004e 0023     		movs	r3, #0
+ 110 0050 0493     		str	r3, [sp, #16]
+ 111              		.loc 1 65 3 is_stmt 1 view .LVU32
+ 112              		.loc 1 65 33 is_stmt 0 view .LVU33
+ 113 0052 0593     		str	r3, [sp, #20]
+ 114              		.loc 1 66 3 is_stmt 1 view .LVU34
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s 			page 3
+
+
+ 115              		.loc 1 66 7 is_stmt 0 view .LVU35
+ 116 0054 04A9     		add	r1, sp, #16
+ 117 0056 1148     		ldr	r0, .L13
+ 118 0058 144B     		ldr	r3, .L13+16
+ 119 005a 9847     		blx	r3
+ 120              	.LVL3:
+ 121              		.loc 1 66 6 view .LVU36
+ 122 005c B8B9     		cbnz	r0, .L11
+ 123              	.L5:
+ 124              		.loc 1 70 3 is_stmt 1 view .LVU37
+ 125              		.loc 1 70 24 is_stmt 0 view .LVU38
+ 126 005e 0023     		movs	r3, #0
+ 127 0060 0093     		str	r3, [sp]
+ 128              		.loc 1 71 3 is_stmt 1 view .LVU39
+ 129              		.loc 1 71 25 is_stmt 0 view .LVU40
+ 130 0062 0122     		movs	r2, #1
+ 131 0064 0192     		str	r2, [sp, #4]
+ 132              		.loc 1 72 3 is_stmt 1 view .LVU41
+ 133              		.loc 1 72 25 is_stmt 0 view .LVU42
+ 134 0066 0293     		str	r3, [sp, #8]
+ 135              		.loc 1 73 3 is_stmt 1 view .LVU43
+ 136              		.loc 1 73 22 is_stmt 0 view .LVU44
+ 137 0068 0393     		str	r3, [sp, #12]
+ 138              		.loc 1 74 3 is_stmt 1 view .LVU45
+ 139              		.loc 1 74 7 is_stmt 0 view .LVU46
+ 140 006a 0822     		movs	r2, #8
+ 141 006c 6946     		mov	r1, sp
+ 142 006e 0B48     		ldr	r0, .L13
+ 143 0070 0F4B     		ldr	r3, .L13+20
+ 144 0072 9847     		blx	r3
+ 145              	.LVL4:
+ 146              		.loc 1 74 6 view .LVU47
+ 147 0074 70B9     		cbnz	r0, .L12
+ 148              	.L1:
+ 149              		.loc 1 82 1 view .LVU48
+ 150 0076 0BB0     		add	sp, sp, #44
+ 151              	.LCFI2:
+ 152              		.cfi_remember_state
+ 153              		.cfi_def_cfa_offset 4
+ 154              		@ sp needed
+ 155 0078 5DF804FB 		ldr	pc, [sp], #4
+ 156              	.L8:
+ 157              	.LCFI3:
+ 158              		.cfi_restore_state
+ 159              		.loc 1 53 5 is_stmt 1 view .LVU49
+ 160 007c 0D4B     		ldr	r3, .L13+24
+ 161 007e 9847     		blx	r3
+ 162              	.LVL5:
+ 163 0080 D9E7     		b	.L2
+ 164              	.L9:
+ 165              		.loc 1 58 5 view .LVU50
+ 166 0082 0C4B     		ldr	r3, .L13+24
+ 167 0084 9847     		blx	r3
+ 168              	.LVL6:
+ 169 0086 DEE7     		b	.L3
+ 170              	.L10:
+ 171              		.loc 1 62 5 view .LVU51
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s 			page 4
+
+
+ 172 0088 0A4B     		ldr	r3, .L13+24
+ 173 008a 9847     		blx	r3
+ 174              	.LVL7:
+ 175 008c DFE7     		b	.L4
+ 176              	.L11:
+ 177              		.loc 1 68 5 view .LVU52
+ 178 008e 094B     		ldr	r3, .L13+24
+ 179 0090 9847     		blx	r3
+ 180              	.LVL8:
+ 181 0092 E4E7     		b	.L5
+ 182              	.L12:
+ 183              		.loc 1 76 5 view .LVU53
+ 184 0094 074B     		ldr	r3, .L13+24
+ 185 0096 9847     		blx	r3
+ 186              	.LVL9:
+ 187              		.loc 1 82 1 is_stmt 0 view .LVU54
+ 188 0098 EDE7     		b	.L1
+ 189              	.L14:
+ 190 009a 00BF     		.align	2
+ 191              	.L13:
+ 192 009c 00000000 		.word	.LANCHOR0
+ 193 00a0 00000000 		.word	HAL_TIM_Base_Init
+ 194 00a4 00000000 		.word	HAL_TIM_ConfigClockSource
+ 195 00a8 00000000 		.word	HAL_TIM_IC_Init
+ 196 00ac 00000000 		.word	HAL_TIMEx_MasterConfigSynchronization
+ 197 00b0 00000000 		.word	HAL_TIM_IC_ConfigChannel
+ 198 00b4 00000000 		.word	Error_Handler
+ 199              		.cfi_endproc
+ 200              	.LFE65:
+ 202              		.section	.text.HAL_TIM_Base_MspInit,"ax",%progbits
+ 203              		.align	1
+ 204              		.global	HAL_TIM_Base_MspInit
+ 205              		.syntax unified
+ 206              		.thumb
+ 207              		.thumb_func
+ 208              		.fpu softvfp
+ 210              	HAL_TIM_Base_MspInit:
+ 211              	.LVL10:
+ 212              	.LFB67:
+ 213              		.loc 1 139 1 is_stmt 1 view -0
+ 214              		.cfi_startproc
+ 215              		@ args = 0, pretend = 0, frame = 32
+ 216              		@ frame_needed = 0, uses_anonymous_args = 0
+ 217              		.loc 1 139 1 is_stmt 0 view .LVU56
+ 218 0000 00B5     		push	{lr}
+ 219              	.LCFI4:
+ 220              		.cfi_def_cfa_offset 4
+ 221              		.cfi_offset 14, -4
+ 222 0002 89B0     		sub	sp, sp, #36
+ 223              	.LCFI5:
+ 224              		.cfi_def_cfa_offset 40
+ 225              		.loc 1 141 3 is_stmt 1 view .LVU57
+ 226              		.loc 1 141 20 is_stmt 0 view .LVU58
+ 227 0004 0023     		movs	r3, #0
+ 228 0006 0493     		str	r3, [sp, #16]
+ 229 0008 0593     		str	r3, [sp, #20]
+ 230 000a 0693     		str	r3, [sp, #24]
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s 			page 5
+
+
+ 231 000c 0793     		str	r3, [sp, #28]
+ 232              		.loc 1 142 3 is_stmt 1 view .LVU59
+ 233              		.loc 1 142 20 is_stmt 0 view .LVU60
+ 234 000e 0368     		ldr	r3, [r0]
+ 235              		.loc 1 142 5 view .LVU61
+ 236 0010 B3F1804F 		cmp	r3, #1073741824
+ 237 0014 05D0     		beq	.L19
+ 238              		.loc 1 168 8 is_stmt 1 view .LVU62
+ 239              		.loc 1 168 10 is_stmt 0 view .LVU63
+ 240 0016 234A     		ldr	r2, .L21
+ 241 0018 9342     		cmp	r3, r2
+ 242 001a 2FD0     		beq	.L20
+ 243              	.LVL11:
+ 244              	.L15:
+ 245              		.loc 1 183 1 view .LVU64
+ 246 001c 09B0     		add	sp, sp, #36
+ 247              	.LCFI6:
+ 248              		.cfi_remember_state
+ 249              		.cfi_def_cfa_offset 4
+ 250              		@ sp needed
+ 251 001e 5DF804FB 		ldr	pc, [sp], #4
+ 252              	.LVL12:
+ 253              	.L19:
+ 254              	.LCFI7:
+ 255              		.cfi_restore_state
+ 256              		.loc 1 148 5 is_stmt 1 view .LVU65
+ 257              	.LBB2:
+ 258              		.loc 1 148 5 view .LVU66
+ 259              		.loc 1 148 5 view .LVU67
+ 260 0022 03F50433 		add	r3, r3, #135168
+ 261 0026 DA69     		ldr	r2, [r3, #28]
+ 262 0028 42F00102 		orr	r2, r2, #1
+ 263 002c DA61     		str	r2, [r3, #28]
+ 264              		.loc 1 148 5 view .LVU68
+ 265 002e DA69     		ldr	r2, [r3, #28]
+ 266 0030 02F00102 		and	r2, r2, #1
+ 267 0034 0192     		str	r2, [sp, #4]
+ 268              		.loc 1 148 5 view .LVU69
+ 269 0036 019A     		ldr	r2, [sp, #4]
+ 270              	.LBE2:
+ 271              		.loc 1 148 5 view .LVU70
+ 272              		.loc 1 150 5 view .LVU71
+ 273              	.LBB3:
+ 274              		.loc 1 150 5 view .LVU72
+ 275              		.loc 1 150 5 view .LVU73
+ 276 0038 9A69     		ldr	r2, [r3, #24]
+ 277 003a 42F00802 		orr	r2, r2, #8
+ 278 003e 9A61     		str	r2, [r3, #24]
+ 279              		.loc 1 150 5 view .LVU74
+ 280 0040 9B69     		ldr	r3, [r3, #24]
+ 281 0042 03F00803 		and	r3, r3, #8
+ 282 0046 0293     		str	r3, [sp, #8]
+ 283              		.loc 1 150 5 view .LVU75
+ 284 0048 029B     		ldr	r3, [sp, #8]
+ 285              	.LBE3:
+ 286              		.loc 1 150 5 view .LVU76
+ 287              		.loc 1 154 5 view .LVU77
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s 			page 6
+
+
+ 288              		.loc 1 154 25 is_stmt 0 view .LVU78
+ 289 004a 4FF48063 		mov	r3, #1024
+ 290 004e 0493     		str	r3, [sp, #16]
+ 291              		.loc 1 155 5 is_stmt 1 view .LVU79
+ 292              		.loc 1 156 5 view .LVU80
+ 293              		.loc 1 157 5 view .LVU81
+ 294 0050 04A9     		add	r1, sp, #16
+ 295 0052 1548     		ldr	r0, .L21+4
+ 296              	.LVL13:
+ 297              		.loc 1 157 5 is_stmt 0 view .LVU82
+ 298 0054 154B     		ldr	r3, .L21+8
+ 299 0056 9847     		blx	r3
+ 300              	.LVL14:
+ 301              		.loc 1 159 5 is_stmt 1 view .LVU83
+ 302              	.LBB4:
+ 303              		.loc 1 159 5 view .LVU84
+ 304 0058 154A     		ldr	r2, .L21+12
+ 305 005a 5368     		ldr	r3, [r2, #4]
+ 306              	.LVL15:
+ 307              		.loc 1 159 5 view .LVU85
+ 308 005c 23F44073 		bic	r3, r3, #768
+ 309              	.LVL16:
+ 310              		.loc 1 159 5 view .LVU86
+ 311              		.loc 1 159 5 view .LVU87
+ 312 0060 43F0E063 		orr	r3, r3, #117440512
+ 313              	.LVL17:
+ 314              		.loc 1 159 5 is_stmt 0 view .LVU88
+ 315 0064 43F40073 		orr	r3, r3, #512
+ 316              	.LVL18:
+ 317              		.loc 1 159 5 is_stmt 1 view .LVU89
+ 318 0068 5360     		str	r3, [r2, #4]
+ 319              	.LBE4:
+ 320              		.loc 1 159 5 view .LVU90
+ 321              		.loc 1 162 5 view .LVU91
+ 322 006a 0022     		movs	r2, #0
+ 323 006c 0521     		movs	r1, #5
+ 324 006e 1C20     		movs	r0, #28
+ 325 0070 104B     		ldr	r3, .L21+16
+ 326              	.LVL19:
+ 327              		.loc 1 162 5 is_stmt 0 view .LVU92
+ 328 0072 9847     		blx	r3
+ 329              	.LVL20:
+ 330              		.loc 1 163 5 is_stmt 1 view .LVU93
+ 331 0074 1C20     		movs	r0, #28
+ 332 0076 104B     		ldr	r3, .L21+20
+ 333 0078 9847     		blx	r3
+ 334              	.LVL21:
+ 335 007a CFE7     		b	.L15
+ 336              	.LVL22:
+ 337              	.L20:
+ 338              		.loc 1 174 5 view .LVU94
+ 339              	.LBB5:
+ 340              		.loc 1 174 5 view .LVU95
+ 341              		.loc 1 174 5 view .LVU96
+ 342 007c 0F4B     		ldr	r3, .L21+24
+ 343 007e DA69     		ldr	r2, [r3, #28]
+ 344 0080 42F00202 		orr	r2, r2, #2
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s 			page 7
+
+
+ 345 0084 DA61     		str	r2, [r3, #28]
+ 346              		.loc 1 174 5 view .LVU97
+ 347 0086 DB69     		ldr	r3, [r3, #28]
+ 348 0088 03F00203 		and	r3, r3, #2
+ 349 008c 0393     		str	r3, [sp, #12]
+ 350              		.loc 1 174 5 view .LVU98
+ 351 008e 039B     		ldr	r3, [sp, #12]
+ 352              	.LBE5:
+ 353              		.loc 1 174 5 view .LVU99
+ 354              		.loc 1 177 5 view .LVU100
+ 355 0090 0022     		movs	r2, #0
+ 356 0092 0521     		movs	r1, #5
+ 357 0094 1D20     		movs	r0, #29
+ 358              	.LVL23:
+ 359              		.loc 1 177 5 is_stmt 0 view .LVU101
+ 360 0096 074B     		ldr	r3, .L21+16
+ 361 0098 9847     		blx	r3
+ 362              	.LVL24:
+ 363              		.loc 1 178 5 is_stmt 1 view .LVU102
+ 364 009a 1D20     		movs	r0, #29
+ 365 009c 064B     		ldr	r3, .L21+20
+ 366 009e 9847     		blx	r3
+ 367              	.LVL25:
+ 368              		.loc 1 183 1 is_stmt 0 view .LVU103
+ 369 00a0 BCE7     		b	.L15
+ 370              	.L22:
+ 371 00a2 00BF     		.align	2
+ 372              	.L21:
+ 373 00a4 00040040 		.word	1073742848
+ 374 00a8 000C0140 		.word	1073810432
+ 375 00ac 00000000 		.word	HAL_GPIO_Init
+ 376 00b0 00000140 		.word	1073807360
+ 377 00b4 00000000 		.word	HAL_NVIC_SetPriority
+ 378 00b8 00000000 		.word	HAL_NVIC_EnableIRQ
+ 379 00bc 00100240 		.word	1073876992
+ 380              		.cfi_endproc
+ 381              	.LFE67:
+ 383              		.section	.text.HAL_TIM_MspPostInit,"ax",%progbits
+ 384              		.align	1
+ 385              		.global	HAL_TIM_MspPostInit
+ 386              		.syntax unified
+ 387              		.thumb
+ 388              		.thumb_func
+ 389              		.fpu softvfp
+ 391              	HAL_TIM_MspPostInit:
+ 392              	.LVL26:
+ 393              	.LFB68:
+ 394              		.loc 1 185 1 is_stmt 1 view -0
+ 395              		.cfi_startproc
+ 396              		@ args = 0, pretend = 0, frame = 24
+ 397              		@ frame_needed = 0, uses_anonymous_args = 0
+ 398              		.loc 1 185 1 is_stmt 0 view .LVU105
+ 399 0000 00B5     		push	{lr}
+ 400              	.LCFI8:
+ 401              		.cfi_def_cfa_offset 4
+ 402              		.cfi_offset 14, -4
+ 403 0002 87B0     		sub	sp, sp, #28
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s 			page 8
+
+
+ 404              	.LCFI9:
+ 405              		.cfi_def_cfa_offset 32
+ 406              		.loc 1 187 3 is_stmt 1 view .LVU106
+ 407              		.loc 1 187 20 is_stmt 0 view .LVU107
+ 408 0004 0023     		movs	r3, #0
+ 409 0006 0293     		str	r3, [sp, #8]
+ 410 0008 0393     		str	r3, [sp, #12]
+ 411 000a 0493     		str	r3, [sp, #16]
+ 412 000c 0593     		str	r3, [sp, #20]
+ 413              		.loc 1 188 3 is_stmt 1 view .LVU108
+ 414              		.loc 1 188 15 is_stmt 0 view .LVU109
+ 415 000e 0268     		ldr	r2, [r0]
+ 416              		.loc 1 188 5 view .LVU110
+ 417 0010 0D4B     		ldr	r3, .L27
+ 418 0012 9A42     		cmp	r2, r3
+ 419 0014 02D0     		beq	.L26
+ 420              	.LVL27:
+ 421              	.L23:
+ 422              		.loc 1 208 1 view .LVU111
+ 423 0016 07B0     		add	sp, sp, #28
+ 424              	.LCFI10:
+ 425              		.cfi_remember_state
+ 426              		.cfi_def_cfa_offset 4
+ 427              		@ sp needed
+ 428 0018 5DF804FB 		ldr	pc, [sp], #4
+ 429              	.LVL28:
+ 430              	.L26:
+ 431              	.LCFI11:
+ 432              		.cfi_restore_state
+ 433              		.loc 1 194 5 is_stmt 1 view .LVU112
+ 434              	.LBB6:
+ 435              		.loc 1 194 5 view .LVU113
+ 436              		.loc 1 194 5 view .LVU114
+ 437 001c 03F50333 		add	r3, r3, #134144
+ 438 0020 9A69     		ldr	r2, [r3, #24]
+ 439 0022 42F00402 		orr	r2, r2, #4
+ 440 0026 9A61     		str	r2, [r3, #24]
+ 441              		.loc 1 194 5 view .LVU115
+ 442 0028 9B69     		ldr	r3, [r3, #24]
+ 443 002a 03F00403 		and	r3, r3, #4
+ 444 002e 0193     		str	r3, [sp, #4]
+ 445              		.loc 1 194 5 view .LVU116
+ 446 0030 019B     		ldr	r3, [sp, #4]
+ 447              	.LBE6:
+ 448              		.loc 1 194 5 view .LVU117
+ 449              		.loc 1 198 5 view .LVU118
+ 450              		.loc 1 198 25 is_stmt 0 view .LVU119
+ 451 0032 4023     		movs	r3, #64
+ 452 0034 0293     		str	r3, [sp, #8]
+ 453              		.loc 1 199 5 is_stmt 1 view .LVU120
+ 454              		.loc 1 199 26 is_stmt 0 view .LVU121
+ 455 0036 0223     		movs	r3, #2
+ 456 0038 0393     		str	r3, [sp, #12]
+ 457              		.loc 1 200 5 is_stmt 1 view .LVU122
+ 458              		.loc 1 200 27 is_stmt 0 view .LVU123
+ 459 003a 0593     		str	r3, [sp, #20]
+ 460              		.loc 1 201 5 is_stmt 1 view .LVU124
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s 			page 9
+
+
+ 461 003c 02A9     		add	r1, sp, #8
+ 462 003e 0348     		ldr	r0, .L27+4
+ 463              	.LVL29:
+ 464              		.loc 1 201 5 is_stmt 0 view .LVU125
+ 465 0040 034B     		ldr	r3, .L27+8
+ 466 0042 9847     		blx	r3
+ 467              	.LVL30:
+ 468              		.loc 1 208 1 view .LVU126
+ 469 0044 E7E7     		b	.L23
+ 470              	.L28:
+ 471 0046 00BF     		.align	2
+ 472              	.L27:
+ 473 0048 00040040 		.word	1073742848
+ 474 004c 00080140 		.word	1073809408
+ 475 0050 00000000 		.word	HAL_GPIO_Init
+ 476              		.cfi_endproc
+ 477              	.LFE68:
+ 479              		.section	.text.MX_TIM3_Init,"ax",%progbits
+ 480              		.align	1
+ 481              		.global	MX_TIM3_Init
+ 482              		.syntax unified
+ 483              		.thumb
+ 484              		.thumb_func
+ 485              		.fpu softvfp
+ 487              	MX_TIM3_Init:
+ 488              	.LFB66:
+ 489              		.loc 1 85 1 is_stmt 1 view -0
+ 490              		.cfi_startproc
+ 491              		@ args = 0, pretend = 0, frame = 56
+ 492              		@ frame_needed = 0, uses_anonymous_args = 0
+ 493 0000 00B5     		push	{lr}
+ 494              	.LCFI12:
+ 495              		.cfi_def_cfa_offset 4
+ 496              		.cfi_offset 14, -4
+ 497 0002 8FB0     		sub	sp, sp, #60
+ 498              	.LCFI13:
+ 499              		.cfi_def_cfa_offset 64
+ 500              		.loc 1 91 3 view .LVU128
+ 501              		.loc 1 91 26 is_stmt 0 view .LVU129
+ 502 0004 0023     		movs	r3, #0
+ 503 0006 0A93     		str	r3, [sp, #40]
+ 504 0008 0B93     		str	r3, [sp, #44]
+ 505 000a 0C93     		str	r3, [sp, #48]
+ 506 000c 0D93     		str	r3, [sp, #52]
+ 507              		.loc 1 92 3 is_stmt 1 view .LVU130
+ 508              		.loc 1 92 27 is_stmt 0 view .LVU131
+ 509 000e 0893     		str	r3, [sp, #32]
+ 510 0010 0993     		str	r3, [sp, #36]
+ 511              		.loc 1 93 3 is_stmt 1 view .LVU132
+ 512              		.loc 1 93 22 is_stmt 0 view .LVU133
+ 513 0012 0193     		str	r3, [sp, #4]
+ 514 0014 0293     		str	r3, [sp, #8]
+ 515 0016 0393     		str	r3, [sp, #12]
+ 516 0018 0493     		str	r3, [sp, #16]
+ 517 001a 0593     		str	r3, [sp, #20]
+ 518 001c 0693     		str	r3, [sp, #24]
+ 519 001e 0793     		str	r3, [sp, #28]
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s 			page 10
+
+
+ 520              		.loc 1 98 3 is_stmt 1 view .LVU134
+ 521              		.loc 1 98 18 is_stmt 0 view .LVU135
+ 522 0020 2148     		ldr	r0, .L41
+ 523 0022 224A     		ldr	r2, .L41+4
+ 524 0024 0260     		str	r2, [r0]
+ 525              		.loc 1 99 3 is_stmt 1 view .LVU136
+ 526              		.loc 1 99 24 is_stmt 0 view .LVU137
+ 527 0026 41F63F72 		movw	r2, #7999
+ 528 002a 4260     		str	r2, [r0, #4]
+ 529              		.loc 1 100 3 is_stmt 1 view .LVU138
+ 530              		.loc 1 100 26 is_stmt 0 view .LVU139
+ 531 002c 8360     		str	r3, [r0, #8]
+ 532              		.loc 1 101 3 is_stmt 1 view .LVU140
+ 533              		.loc 1 101 21 is_stmt 0 view .LVU141
+ 534 002e 0922     		movs	r2, #9
+ 535 0030 C260     		str	r2, [r0, #12]
+ 536              		.loc 1 102 3 is_stmt 1 view .LVU142
+ 537              		.loc 1 102 28 is_stmt 0 view .LVU143
+ 538 0032 0361     		str	r3, [r0, #16]
+ 539              		.loc 1 103 3 is_stmt 1 view .LVU144
+ 540              		.loc 1 103 32 is_stmt 0 view .LVU145
+ 541 0034 8361     		str	r3, [r0, #24]
+ 542              		.loc 1 104 3 is_stmt 1 view .LVU146
+ 543              		.loc 1 104 7 is_stmt 0 view .LVU147
+ 544 0036 1E4B     		ldr	r3, .L41+8
+ 545 0038 9847     		blx	r3
+ 546              	.LVL31:
+ 547              		.loc 1 104 6 view .LVU148
+ 548 003a 28BB     		cbnz	r0, .L36
+ 549              	.L30:
+ 550              		.loc 1 108 3 is_stmt 1 view .LVU149
+ 551              		.loc 1 108 34 is_stmt 0 view .LVU150
+ 552 003c 4FF48053 		mov	r3, #4096
+ 553 0040 0A93     		str	r3, [sp, #40]
+ 554              		.loc 1 109 3 is_stmt 1 view .LVU151
+ 555              		.loc 1 109 7 is_stmt 0 view .LVU152
+ 556 0042 0AA9     		add	r1, sp, #40
+ 557 0044 1848     		ldr	r0, .L41
+ 558 0046 1B4B     		ldr	r3, .L41+12
+ 559 0048 9847     		blx	r3
+ 560              	.LVL32:
+ 561              		.loc 1 109 6 view .LVU153
+ 562 004a 00BB     		cbnz	r0, .L37
+ 563              	.L31:
+ 564              		.loc 1 113 3 is_stmt 1 view .LVU154
+ 565              		.loc 1 113 7 is_stmt 0 view .LVU155
+ 566 004c 1648     		ldr	r0, .L41
+ 567 004e 1A4B     		ldr	r3, .L41+16
+ 568 0050 9847     		blx	r3
+ 569              	.LVL33:
+ 570              		.loc 1 113 6 view .LVU156
+ 571 0052 F8B9     		cbnz	r0, .L38
+ 572              	.L32:
+ 573              		.loc 1 117 3 is_stmt 1 view .LVU157
+ 574              		.loc 1 117 37 is_stmt 0 view .LVU158
+ 575 0054 0023     		movs	r3, #0
+ 576 0056 0893     		str	r3, [sp, #32]
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s 			page 11
+
+
+ 577              		.loc 1 118 3 is_stmt 1 view .LVU159
+ 578              		.loc 1 118 33 is_stmt 0 view .LVU160
+ 579 0058 0993     		str	r3, [sp, #36]
+ 580              		.loc 1 119 3 is_stmt 1 view .LVU161
+ 581              		.loc 1 119 7 is_stmt 0 view .LVU162
+ 582 005a 08A9     		add	r1, sp, #32
+ 583 005c 1248     		ldr	r0, .L41
+ 584 005e 174B     		ldr	r3, .L41+20
+ 585 0060 9847     		blx	r3
+ 586              	.LVL34:
+ 587              		.loc 1 119 6 view .LVU163
+ 588 0062 D0B9     		cbnz	r0, .L39
+ 589              	.L33:
+ 590              		.loc 1 123 3 is_stmt 1 view .LVU164
+ 591              		.loc 1 123 20 is_stmt 0 view .LVU165
+ 592 0064 6023     		movs	r3, #96
+ 593 0066 0193     		str	r3, [sp, #4]
+ 594              		.loc 1 124 3 is_stmt 1 view .LVU166
+ 595              		.loc 1 124 19 is_stmt 0 view .LVU167
+ 596 0068 0022     		movs	r2, #0
+ 597 006a 0292     		str	r2, [sp, #8]
+ 598              		.loc 1 125 3 is_stmt 1 view .LVU168
+ 599              		.loc 1 125 24 is_stmt 0 view .LVU169
+ 600 006c 0223     		movs	r3, #2
+ 601 006e 0393     		str	r3, [sp, #12]
+ 602              		.loc 1 126 3 is_stmt 1 view .LVU170
+ 603              		.loc 1 126 24 is_stmt 0 view .LVU171
+ 604 0070 0592     		str	r2, [sp, #20]
+ 605              		.loc 1 127 3 is_stmt 1 view .LVU172
+ 606              		.loc 1 127 7 is_stmt 0 view .LVU173
+ 607 0072 01A9     		add	r1, sp, #4
+ 608 0074 0C48     		ldr	r0, .L41
+ 609 0076 124B     		ldr	r3, .L41+24
+ 610 0078 9847     		blx	r3
+ 611              	.LVL35:
+ 612              		.loc 1 127 6 view .LVU174
+ 613 007a 88B9     		cbnz	r0, .L40
+ 614              	.L34:
+ 615              		.loc 1 134 3 is_stmt 1 view .LVU175
+ 616 007c 0A48     		ldr	r0, .L41
+ 617 007e 114B     		ldr	r3, .L41+28
+ 618 0080 9847     		blx	r3
+ 619              	.LVL36:
+ 620              		.loc 1 136 1 is_stmt 0 view .LVU176
+ 621 0082 0FB0     		add	sp, sp, #60
+ 622              	.LCFI14:
+ 623              		.cfi_remember_state
+ 624              		.cfi_def_cfa_offset 4
+ 625              		@ sp needed
+ 626 0084 5DF804FB 		ldr	pc, [sp], #4
+ 627              	.L36:
+ 628              	.LCFI15:
+ 629              		.cfi_restore_state
+ 630              		.loc 1 106 5 is_stmt 1 view .LVU177
+ 631 0088 0F4B     		ldr	r3, .L41+32
+ 632 008a 9847     		blx	r3
+ 633              	.LVL37:
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s 			page 12
+
+
+ 634 008c D6E7     		b	.L30
+ 635              	.L37:
+ 636              		.loc 1 111 5 view .LVU178
+ 637 008e 0E4B     		ldr	r3, .L41+32
+ 638 0090 9847     		blx	r3
+ 639              	.LVL38:
+ 640 0092 DBE7     		b	.L31
+ 641              	.L38:
+ 642              		.loc 1 115 5 view .LVU179
+ 643 0094 0C4B     		ldr	r3, .L41+32
+ 644 0096 9847     		blx	r3
+ 645              	.LVL39:
+ 646 0098 DCE7     		b	.L32
+ 647              	.L39:
+ 648              		.loc 1 121 5 view .LVU180
+ 649 009a 0B4B     		ldr	r3, .L41+32
+ 650 009c 9847     		blx	r3
+ 651              	.LVL40:
+ 652 009e E1E7     		b	.L33
+ 653              	.L40:
+ 654              		.loc 1 129 5 view .LVU181
+ 655 00a0 094B     		ldr	r3, .L41+32
+ 656 00a2 9847     		blx	r3
+ 657              	.LVL41:
+ 658 00a4 EAE7     		b	.L34
+ 659              	.L42:
+ 660 00a6 00BF     		.align	2
+ 661              	.L41:
+ 662 00a8 00000000 		.word	.LANCHOR1
+ 663 00ac 00040040 		.word	1073742848
+ 664 00b0 00000000 		.word	HAL_TIM_Base_Init
+ 665 00b4 00000000 		.word	HAL_TIM_ConfigClockSource
+ 666 00b8 00000000 		.word	HAL_TIM_PWM_Init
+ 667 00bc 00000000 		.word	HAL_TIMEx_MasterConfigSynchronization
+ 668 00c0 00000000 		.word	HAL_TIM_PWM_ConfigChannel
+ 669 00c4 00000000 		.word	HAL_TIM_MspPostInit
+ 670 00c8 00000000 		.word	Error_Handler
+ 671              		.cfi_endproc
+ 672              	.LFE66:
+ 674              		.section	.text.HAL_TIM_Base_MspDeInit,"ax",%progbits
+ 675              		.align	1
+ 676              		.global	HAL_TIM_Base_MspDeInit
+ 677              		.syntax unified
+ 678              		.thumb
+ 679              		.thumb_func
+ 680              		.fpu softvfp
+ 682              	HAL_TIM_Base_MspDeInit:
+ 683              	.LVL42:
+ 684              	.LFB69:
+ 685              		.loc 1 211 1 view -0
+ 686              		.cfi_startproc
+ 687              		@ args = 0, pretend = 0, frame = 0
+ 688              		@ frame_needed = 0, uses_anonymous_args = 0
+ 689              		.loc 1 211 1 is_stmt 0 view .LVU183
+ 690 0000 08B5     		push	{r3, lr}
+ 691              	.LCFI16:
+ 692              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s 			page 13
+
+
+ 693              		.cfi_offset 3, -8
+ 694              		.cfi_offset 14, -4
+ 695              		.loc 1 213 3 is_stmt 1 view .LVU184
+ 696              		.loc 1 213 20 is_stmt 0 view .LVU185
+ 697 0002 0368     		ldr	r3, [r0]
+ 698              		.loc 1 213 5 view .LVU186
+ 699 0004 B3F1804F 		cmp	r3, #1073741824
+ 700 0008 03D0     		beq	.L47
+ 701              		.loc 1 232 8 is_stmt 1 view .LVU187
+ 702              		.loc 1 232 10 is_stmt 0 view .LVU188
+ 703 000a 0E4A     		ldr	r2, .L49
+ 704 000c 9342     		cmp	r3, r2
+ 705 000e 0ED0     		beq	.L48
+ 706              	.LVL43:
+ 707              	.L43:
+ 708              		.loc 1 246 1 view .LVU189
+ 709 0010 08BD     		pop	{r3, pc}
+ 710              	.LVL44:
+ 711              	.L47:
+ 712              		.loc 1 219 5 is_stmt 1 view .LVU190
+ 713 0012 0D4A     		ldr	r2, .L49+4
+ 714 0014 D369     		ldr	r3, [r2, #28]
+ 715 0016 23F00103 		bic	r3, r3, #1
+ 716 001a D361     		str	r3, [r2, #28]
+ 717              		.loc 1 224 5 view .LVU191
+ 718 001c 4FF48061 		mov	r1, #1024
+ 719 0020 0A48     		ldr	r0, .L49+8
+ 720              	.LVL45:
+ 721              		.loc 1 224 5 is_stmt 0 view .LVU192
+ 722 0022 0B4B     		ldr	r3, .L49+12
+ 723 0024 9847     		blx	r3
+ 724              	.LVL46:
+ 725              		.loc 1 227 5 is_stmt 1 view .LVU193
+ 726 0026 1C20     		movs	r0, #28
+ 727 0028 0A4B     		ldr	r3, .L49+16
+ 728 002a 9847     		blx	r3
+ 729              	.LVL47:
+ 730 002c F0E7     		b	.L43
+ 731              	.LVL48:
+ 732              	.L48:
+ 733              		.loc 1 238 5 view .LVU194
+ 734 002e 02F50332 		add	r2, r2, #134144
+ 735 0032 D369     		ldr	r3, [r2, #28]
+ 736 0034 23F00203 		bic	r3, r3, #2
+ 737 0038 D361     		str	r3, [r2, #28]
+ 738              		.loc 1 241 5 view .LVU195
+ 739 003a 1D20     		movs	r0, #29
+ 740              	.LVL49:
+ 741              		.loc 1 241 5 is_stmt 0 view .LVU196
+ 742 003c 054B     		ldr	r3, .L49+16
+ 743 003e 9847     		blx	r3
+ 744              	.LVL50:
+ 745              		.loc 1 246 1 view .LVU197
+ 746 0040 E6E7     		b	.L43
+ 747              	.L50:
+ 748 0042 00BF     		.align	2
+ 749              	.L49:
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s 			page 14
+
+
+ 750 0044 00040040 		.word	1073742848
+ 751 0048 00100240 		.word	1073876992
+ 752 004c 000C0140 		.word	1073810432
+ 753 0050 00000000 		.word	HAL_GPIO_DeInit
+ 754 0054 00000000 		.word	HAL_NVIC_DisableIRQ
+ 755              		.cfi_endproc
+ 756              	.LFE69:
+ 758              		.global	htim3
+ 759              		.global	htim2
+ 760              		.section	.bss.htim2,"aw",%nobits
+ 761              		.align	2
+ 762              		.set	.LANCHOR0,. + 0
+ 765              	htim2:
+ 766 0000 00000000 		.space	72
+ 766      00000000 
+ 766      00000000 
+ 766      00000000 
+ 766      00000000 
+ 767              		.section	.bss.htim3,"aw",%nobits
+ 768              		.align	2
+ 769              		.set	.LANCHOR1,. + 0
+ 772              	htim3:
+ 773 0000 00000000 		.space	72
+ 773      00000000 
+ 773      00000000 
+ 773      00000000 
+ 773      00000000 
+ 774              		.text
+ 775              	.Letext0:
+ 776              		.file 2 "../c:\\users\\korisnik\\desktop\\etf\\4. godina\\mips\\gnu mcu\\arm-none-eabi-gcc-10.2.1-
+ 777              		.file 3 "../c:\\users\\korisnik\\desktop\\etf\\4. godina\\mips\\gnu mcu\\arm-none-eabi-gcc-10.2.1-
+ 778              		.file 4 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103x6.h"
+ 779              		.file 5 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 780              		.file 6 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ 781              		.file 7 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 782              		.file 8 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
+ 783              		.file 9 "../Core/Inc/tim.h"
+ 784              		.file 10 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h"
+ 785              		.file 11 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h"
+ 786              		.file 12 "../Core/Inc/main.h"
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s 			page 15
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 tim.c
+C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s:16     .text.MX_TIM2_Init:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s:24     .text.MX_TIM2_Init:0000000000000000 MX_TIM2_Init
+C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s:192    .text.MX_TIM2_Init:000000000000009c $d
+C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s:203    .text.HAL_TIM_Base_MspInit:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s:210    .text.HAL_TIM_Base_MspInit:0000000000000000 HAL_TIM_Base_MspInit
+C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s:373    .text.HAL_TIM_Base_MspInit:00000000000000a4 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s:384    .text.HAL_TIM_MspPostInit:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s:391    .text.HAL_TIM_MspPostInit:0000000000000000 HAL_TIM_MspPostInit
+C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s:473    .text.HAL_TIM_MspPostInit:0000000000000048 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s:480    .text.MX_TIM3_Init:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s:487    .text.MX_TIM3_Init:0000000000000000 MX_TIM3_Init
+C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s:662    .text.MX_TIM3_Init:00000000000000a8 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s:675    .text.HAL_TIM_Base_MspDeInit:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s:682    .text.HAL_TIM_Base_MspDeInit:0000000000000000 HAL_TIM_Base_MspDeInit
+C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s:750    .text.HAL_TIM_Base_MspDeInit:0000000000000044 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s:772    .bss.htim3:0000000000000000 htim3
+C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s:765    .bss.htim2:0000000000000000 htim2
+C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s:761    .bss.htim2:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccQXjNPY.s:768    .bss.htim3:0000000000000000 $d
+
+UNDEFINED SYMBOLS
+HAL_TIM_Base_Init
+HAL_TIM_ConfigClockSource
+HAL_TIM_IC_Init
+HAL_TIMEx_MasterConfigSynchronization
+HAL_TIM_IC_ConfigChannel
+Error_Handler
+HAL_GPIO_Init
+HAL_NVIC_SetPriority
+HAL_NVIC_EnableIRQ
+HAL_TIM_PWM_Init
+HAL_TIM_PWM_ConfigChannel
+HAL_GPIO_DeInit
+HAL_NVIC_DisableIRQ

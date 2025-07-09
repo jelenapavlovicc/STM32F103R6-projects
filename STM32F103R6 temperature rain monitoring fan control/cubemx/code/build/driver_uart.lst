@@ -1,0 +1,646 @@
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"driver_uart.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text.UART_TxTask,"ax",%progbits
+  16              		.align	1
+  17              		.arch armv7-m
+  18              		.syntax unified
+  19              		.thumb
+  20              		.thumb_func
+  21              		.fpu softvfp
+  23              	UART_TxTask:
+  24              	.LFB69:
+  25              		.file 1 "../Core/Src/driver_uart.c"
+   1:../Core/Src/driver_uart.c **** 
+  26              		.loc 1 22 1 view -0
+  27              		.cfi_startproc
+  28              		@ Volatile: function does not return.
+  29              		@ args = 0, pretend = 0, frame = 8
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              	.LVL0:
+  32              		.loc 1 22 1 is_stmt 0 view .LVU1
+  33 0000 00B5     		push	{lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 4
+  36              		.cfi_offset 14, -4
+  37 0002 83B0     		sub	sp, sp, #12
+  38              	.LCFI1:
+  39              		.cfi_def_cfa_offset 16
+  40              	.LVL1:
+  41              	.L2:
+  42              		.loc 1 23 2 is_stmt 1 discriminator 1 view .LVU2
+  43              		.loc 1 24 2 discriminator 1 view .LVU3
+  44              		.loc 1 26 3 discriminator 1 view .LVU4
+  45 0004 4FF0FF32 		mov	r2, #-1
+  46 0008 0DF10701 		add	r1, sp, #7
+  47 000c 074B     		ldr	r3, .L4
+  48 000e 1868     		ldr	r0, [r3]
+  49 0010 074B     		ldr	r3, .L4+4
+  50 0012 9847     		blx	r3
+  51              	.LVL2:
+  52              		.loc 1 27 3 discriminator 1 view .LVU5
+  53 0014 0122     		movs	r2, #1
+  54 0016 0DF10701 		add	r1, sp, #7
+  55 001a 0648     		ldr	r0, .L4+8
+  56 001c 064B     		ldr	r3, .L4+12
+  57 001e 9847     		blx	r3
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s 			page 2
+
+
+  58              	.LVL3:
+  59              		.loc 1 28 3 discriminator 1 view .LVU6
+  60 0020 4FF0FF31 		mov	r1, #-1
+  61 0024 0120     		movs	r0, #1
+  62 0026 054B     		ldr	r3, .L4+16
+  63 0028 9847     		blx	r3
+  64              	.LVL4:
+  65              		.loc 1 24 7 discriminator 1 view .LVU7
+  66 002a EBE7     		b	.L2
+  67              	.L5:
+  68              		.align	2
+  69              	.L4:
+  70 002c 00000000 		.word	.LANCHOR0
+  71 0030 00000000 		.word	xQueueReceive
+  72 0034 00000000 		.word	huart1
+  73 0038 00000000 		.word	HAL_UART_Transmit_IT
+  74 003c 00000000 		.word	ulTaskNotifyTake
+  75              		.cfi_endproc
+  76              	.LFE69:
+  78              		.section	.text.HAL_UART_TxCpltCallback,"ax",%progbits
+  79              		.align	1
+  80              		.global	HAL_UART_TxCpltCallback
+  81              		.syntax unified
+  82              		.thumb
+  83              		.thumb_func
+  84              		.fpu softvfp
+  86              	HAL_UART_TxCpltCallback:
+  87              	.LVL5:
+  88              	.LFB70:
+  89              		.loc 1 33 1 view -0
+  90              		.cfi_startproc
+  91              		@ args = 0, pretend = 0, frame = 8
+  92              		@ frame_needed = 0, uses_anonymous_args = 0
+  93              		.loc 1 34 2 view .LVU9
+  94              		.loc 1 34 11 is_stmt 0 view .LVU10
+  95 0000 0E4B     		ldr	r3, .L14
+  96 0002 1A68     		ldr	r2, [r3]
+  97              		.loc 1 34 29 view .LVU11
+  98 0004 0368     		ldr	r3, [r0]
+  99              		.loc 1 34 4 view .LVU12
+ 100 0006 9A42     		cmp	r2, r3
+ 101 0008 00D0     		beq	.L13
+ 102 000a 7047     		bx	lr
+ 103              	.L13:
+ 104              		.loc 1 33 1 view .LVU13
+ 105 000c 00B5     		push	{lr}
+ 106              	.LCFI2:
+ 107              		.cfi_def_cfa_offset 4
+ 108              		.cfi_offset 14, -4
+ 109 000e 83B0     		sub	sp, sp, #12
+ 110              	.LCFI3:
+ 111              		.cfi_def_cfa_offset 16
+ 112              	.LBB2:
+ 113              		.loc 1 36 3 is_stmt 1 view .LVU14
+ 114              		.loc 1 36 14 is_stmt 0 view .LVU15
+ 115 0010 0023     		movs	r3, #0
+ 116 0012 0193     		str	r3, [sp, #4]
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s 			page 3
+
+
+ 117              		.loc 1 37 3 is_stmt 1 view .LVU16
+ 118 0014 01A9     		add	r1, sp, #4
+ 119 0016 0A4B     		ldr	r3, .L14+4
+ 120 0018 1868     		ldr	r0, [r3]
+ 121              	.LVL6:
+ 122              		.loc 1 37 3 is_stmt 0 view .LVU17
+ 123 001a 0A4B     		ldr	r3, .L14+8
+ 124 001c 9847     		blx	r3
+ 125              	.LVL7:
+ 126              		.loc 1 38 3 is_stmt 1 view .LVU18
+ 127 001e 019B     		ldr	r3, [sp, #4]
+ 128 0020 4BB1     		cbz	r3, .L6
+ 129              		.loc 1 38 3 discriminator 1 view .LVU19
+ 130 0022 4FF0E023 		mov	r3, #-536813568
+ 131 0026 4FF08052 		mov	r2, #268435456
+ 132 002a C3F8042D 		str	r2, [r3, #3332]
+ 133              		.loc 1 38 3 discriminator 1 view .LVU20
+ 134              		.syntax unified
+ 135              	@ 38 "Core/Src/driver_uart.c" 1
+ 136 002e BFF34F8F 		dsb
+ 137              	@ 0 "" 2
+ 138              		.loc 1 38 3 discriminator 1 view .LVU21
+ 139              	@ 38 "Core/Src/driver_uart.c" 1
+ 140 0032 BFF36F8F 		isb
+ 141              	@ 0 "" 2
+ 142              		.loc 1 38 28 discriminator 1 view .LVU22
+ 143              		.thumb
+ 144              		.syntax unified
+ 145              	.L6:
+ 146              	.LBE2:
+ 147              		.loc 1 40 1 is_stmt 0 view .LVU23
+ 148 0036 03B0     		add	sp, sp, #12
+ 149              	.LCFI4:
+ 150              		.cfi_def_cfa_offset 4
+ 151              		@ sp needed
+ 152 0038 5DF804FB 		ldr	pc, [sp], #4
+ 153              	.L15:
+ 154              		.align	2
+ 155              	.L14:
+ 156 003c 00000000 		.word	huart1
+ 157 0040 00000000 		.word	.LANCHOR1
+ 158 0044 00000000 		.word	vTaskNotifyGiveFromISR
+ 159              		.cfi_endproc
+ 160              	.LFE70:
+ 162              		.section	.rodata.UART_Init.str1.4,"aMS",%progbits,1
+ 163              		.align	2
+ 164              	.LC0:
+ 165 0000 55415254 		.ascii	"UART_Transmit\000"
+ 165      5F547261 
+ 165      6E736D69 
+ 165      7400
+ 166              		.section	.text.UART_Init,"ax",%progbits
+ 167              		.align	1
+ 168              		.global	UART_Init
+ 169              		.syntax unified
+ 170              		.thumb
+ 171              		.thumb_func
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s 			page 4
+
+
+ 172              		.fpu softvfp
+ 174              	UART_Init:
+ 175              	.LFB71:
+ 176              		.loc 1 45 1 is_stmt 1 view -0
+ 177              		.cfi_startproc
+ 178              		@ args = 0, pretend = 0, frame = 0
+ 179              		@ frame_needed = 0, uses_anonymous_args = 0
+ 180 0000 10B5     		push	{r4, lr}
+ 181              	.LCFI5:
+ 182              		.cfi_def_cfa_offset 8
+ 183              		.cfi_offset 4, -8
+ 184              		.cfi_offset 14, -4
+ 185 0002 82B0     		sub	sp, sp, #8
+ 186              	.LCFI6:
+ 187              		.cfi_def_cfa_offset 16
+ 188              		.loc 1 46 2 view .LVU25
+ 189 0004 0B4B     		ldr	r3, .L18
+ 190 0006 0193     		str	r3, [sp, #4]
+ 191 0008 0423     		movs	r3, #4
+ 192 000a 0093     		str	r3, [sp]
+ 193 000c 0023     		movs	r3, #0
+ 194 000e 8022     		movs	r2, #128
+ 195 0010 0949     		ldr	r1, .L18+4
+ 196 0012 0A48     		ldr	r0, .L18+8
+ 197 0014 0A4C     		ldr	r4, .L18+12
+ 198 0016 A047     		blx	r4
+ 199              	.LVL8:
+ 200              		.loc 1 47 2 view .LVU26
+ 201              		.loc 1 47 23 is_stmt 0 view .LVU27
+ 202 0018 0022     		movs	r2, #0
+ 203 001a 0121     		movs	r1, #1
+ 204 001c 4020     		movs	r0, #64
+ 205 001e 094B     		ldr	r3, .L18+16
+ 206 0020 9847     		blx	r3
+ 207              	.LVL9:
+ 208              		.loc 1 47 21 view .LVU28
+ 209 0022 094B     		ldr	r3, .L18+20
+ 210 0024 1860     		str	r0, [r3]
+ 211              		.loc 1 48 2 is_stmt 1 view .LVU29
+ 212              		.loc 1 48 23 is_stmt 0 view .LVU30
+ 213 0026 0120     		movs	r0, #1
+ 214 0028 084B     		ldr	r3, .L18+24
+ 215 002a 9847     		blx	r3
+ 216              	.LVL10:
+ 217              		.loc 1 48 21 view .LVU31
+ 218 002c 084B     		ldr	r3, .L18+28
+ 219 002e 1860     		str	r0, [r3]
+ 220              		.loc 1 49 1 view .LVU32
+ 221 0030 02B0     		add	sp, sp, #8
+ 222              	.LCFI7:
+ 223              		.cfi_def_cfa_offset 8
+ 224              		@ sp needed
+ 225 0032 10BD     		pop	{r4, pc}
+ 226              	.L19:
+ 227              		.align	2
+ 228              	.L18:
+ 229 0034 00000000 		.word	.LANCHOR1
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s 			page 5
+
+
+ 230 0038 00000000 		.word	.LC0
+ 231 003c 00000000 		.word	UART_TxTask
+ 232 0040 00000000 		.word	xTaskCreate
+ 233 0044 00000000 		.word	xQueueGenericCreate
+ 234 0048 00000000 		.word	.LANCHOR0
+ 235 004c 00000000 		.word	xQueueCreateMutex
+ 236 0050 00000000 		.word	.LANCHOR2
+ 237              		.cfi_endproc
+ 238              	.LFE71:
+ 240              		.section	.text.UART_AsyncTxCharacter,"ax",%progbits
+ 241              		.align	1
+ 242              		.global	UART_AsyncTxCharacter
+ 243              		.syntax unified
+ 244              		.thumb
+ 245              		.thumb_func
+ 246              		.fpu softvfp
+ 248              	UART_AsyncTxCharacter:
+ 249              	.LVL11:
+ 250              	.LFB72:
+ 251              		.loc 1 54 1 is_stmt 1 view -0
+ 252              		.cfi_startproc
+ 253              		@ args = 0, pretend = 0, frame = 8
+ 254              		@ frame_needed = 0, uses_anonymous_args = 0
+ 255              		.loc 1 54 1 is_stmt 0 view .LVU34
+ 256 0000 30B5     		push	{r4, r5, lr}
+ 257              	.LCFI8:
+ 258              		.cfi_def_cfa_offset 12
+ 259              		.cfi_offset 4, -12
+ 260              		.cfi_offset 5, -8
+ 261              		.cfi_offset 14, -4
+ 262 0002 83B0     		sub	sp, sp, #12
+ 263              	.LCFI9:
+ 264              		.cfi_def_cfa_offset 24
+ 265 0004 8DF80700 		strb	r0, [sp, #7]
+ 266              		.loc 1 55 2 is_stmt 1 view .LVU35
+ 267 0008 0A4D     		ldr	r5, .L22
+ 268 000a 4FF0FF31 		mov	r1, #-1
+ 269 000e 2868     		ldr	r0, [r5]
+ 270              	.LVL12:
+ 271              		.loc 1 55 2 is_stmt 0 view .LVU36
+ 272 0010 094B     		ldr	r3, .L22+4
+ 273 0012 9847     		blx	r3
+ 274              	.LVL13:
+ 275              		.loc 1 56 2 is_stmt 1 view .LVU37
+ 276 0014 0023     		movs	r3, #0
+ 277 0016 4FF0FF32 		mov	r2, #-1
+ 278 001a 0DF10701 		add	r1, sp, #7
+ 279 001e 0748     		ldr	r0, .L22+8
+ 280 0020 0068     		ldr	r0, [r0]
+ 281 0022 074C     		ldr	r4, .L22+12
+ 282 0024 A047     		blx	r4
+ 283              	.LVL14:
+ 284              		.loc 1 57 2 view .LVU38
+ 285 0026 0023     		movs	r3, #0
+ 286 0028 1A46     		mov	r2, r3
+ 287 002a 1946     		mov	r1, r3
+ 288 002c 2868     		ldr	r0, [r5]
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s 			page 6
+
+
+ 289 002e A047     		blx	r4
+ 290              	.LVL15:
+ 291              		.loc 1 58 1 is_stmt 0 view .LVU39
+ 292 0030 03B0     		add	sp, sp, #12
+ 293              	.LCFI10:
+ 294              		.cfi_def_cfa_offset 12
+ 295              		@ sp needed
+ 296 0032 30BD     		pop	{r4, r5, pc}
+ 297              	.L23:
+ 298              		.align	2
+ 299              	.L22:
+ 300 0034 00000000 		.word	.LANCHOR2
+ 301 0038 00000000 		.word	xQueueSemaphoreTake
+ 302 003c 00000000 		.word	.LANCHOR0
+ 303 0040 00000000 		.word	xQueueGenericSend
+ 304              		.cfi_endproc
+ 305              	.LFE72:
+ 307              		.section	.text.UART_AsyncTxString,"ax",%progbits
+ 308              		.align	1
+ 309              		.global	UART_AsyncTxString
+ 310              		.syntax unified
+ 311              		.thumb
+ 312              		.thumb_func
+ 313              		.fpu softvfp
+ 315              	UART_AsyncTxString:
+ 316              	.LVL16:
+ 317              	.LFB73:
+ 318              		.loc 1 61 1 is_stmt 1 view -0
+ 319              		.cfi_startproc
+ 320              		@ args = 0, pretend = 0, frame = 0
+ 321              		@ frame_needed = 0, uses_anonymous_args = 0
+ 322              		.loc 1 62 2 view .LVU41
+ 323              		.loc 1 62 4 is_stmt 0 view .LVU42
+ 324 0000 F8B1     		cbz	r0, .L29
+ 325              		.loc 1 61 1 view .LVU43
+ 326 0002 70B5     		push	{r4, r5, r6, lr}
+ 327              	.LCFI11:
+ 328              		.cfi_def_cfa_offset 16
+ 329              		.cfi_offset 4, -16
+ 330              		.cfi_offset 5, -12
+ 331              		.cfi_offset 6, -8
+ 332              		.cfi_offset 14, -4
+ 333 0004 0546     		mov	r5, r0
+ 334              		.loc 1 64 3 is_stmt 1 view .LVU44
+ 335 0006 4FF0FF31 		mov	r1, #-1
+ 336 000a 0E4B     		ldr	r3, .L32
+ 337 000c 1868     		ldr	r0, [r3]
+ 338              	.LVL17:
+ 339              		.loc 1 64 3 is_stmt 0 view .LVU45
+ 340 000e 0E4B     		ldr	r3, .L32+4
+ 341 0010 9847     		blx	r3
+ 342              	.LVL18:
+ 343              		.loc 1 65 3 is_stmt 1 view .LVU46
+ 344              	.LBB3:
+ 345              		.loc 1 65 7 view .LVU47
+ 346              		.loc 1 65 16 is_stmt 0 view .LVU48
+ 347 0012 0024     		movs	r4, #0
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s 			page 7
+
+
+ 348              		.loc 1 65 3 view .LVU49
+ 349 0014 08E0     		b	.L26
+ 350              	.LVL19:
+ 351              	.L27:
+ 352              		.loc 1 67 4 is_stmt 1 discriminator 3 view .LVU50
+ 353 0016 0023     		movs	r3, #0
+ 354 0018 4FF0FF32 		mov	r2, #-1
+ 355 001c 2919     		adds	r1, r5, r4
+ 356 001e 0B48     		ldr	r0, .L32+8
+ 357 0020 0068     		ldr	r0, [r0]
+ 358 0022 0B4E     		ldr	r6, .L32+12
+ 359 0024 B047     		blx	r6
+ 360              	.LVL20:
+ 361              		.loc 1 65 43 discriminator 3 view .LVU51
+ 362              		.loc 1 65 44 is_stmt 0 discriminator 3 view .LVU52
+ 363 0026 0134     		adds	r4, r4, #1
+ 364              	.LVL21:
+ 365              	.L26:
+ 366              		.loc 1 65 23 is_stmt 1 discriminator 1 view .LVU53
+ 367              		.loc 1 65 27 is_stmt 0 discriminator 1 view .LVU54
+ 368 0028 2846     		mov	r0, r5
+ 369 002a 0A4B     		ldr	r3, .L32+16
+ 370 002c 9847     		blx	r3
+ 371              	.LVL22:
+ 372              		.loc 1 65 3 discriminator 1 view .LVU55
+ 373 002e A042     		cmp	r0, r4
+ 374 0030 F1D8     		bhi	.L27
+ 375              	.LBE3:
+ 376              		.loc 1 69 3 is_stmt 1 view .LVU56
+ 377 0032 0023     		movs	r3, #0
+ 378 0034 1A46     		mov	r2, r3
+ 379 0036 1946     		mov	r1, r3
+ 380 0038 0248     		ldr	r0, .L32
+ 381 003a 0068     		ldr	r0, [r0]
+ 382 003c 044C     		ldr	r4, .L32+12
+ 383              	.LVL23:
+ 384              		.loc 1 69 3 is_stmt 0 view .LVU57
+ 385 003e A047     		blx	r4
+ 386              	.LVL24:
+ 387              		.loc 1 71 1 view .LVU58
+ 388 0040 70BD     		pop	{r4, r5, r6, pc}
+ 389              	.LVL25:
+ 390              	.L29:
+ 391              	.LCFI12:
+ 392              		.cfi_def_cfa_offset 0
+ 393              		.cfi_restore 4
+ 394              		.cfi_restore 5
+ 395              		.cfi_restore 6
+ 396              		.cfi_restore 14
+ 397              		.loc 1 71 1 view .LVU59
+ 398 0042 7047     		bx	lr
+ 399              	.L33:
+ 400              		.align	2
+ 401              	.L32:
+ 402 0044 00000000 		.word	.LANCHOR2
+ 403 0048 00000000 		.word	xQueueSemaphoreTake
+ 404 004c 00000000 		.word	.LANCHOR0
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s 			page 8
+
+
+ 405 0050 00000000 		.word	xQueueGenericSend
+ 406 0054 00000000 		.word	strlen
+ 407              		.cfi_endproc
+ 408              	.LFE73:
+ 410              		.section	.text.UART_AsyncTxDecimal,"ax",%progbits
+ 411              		.align	1
+ 412              		.global	UART_AsyncTxDecimal
+ 413              		.syntax unified
+ 414              		.thumb
+ 415              		.thumb_func
+ 416              		.fpu softvfp
+ 418              	UART_AsyncTxDecimal:
+ 419              	.LVL26:
+ 420              	.LFB74:
+ 421              		.loc 1 74 1 is_stmt 1 view -0
+ 422              		.cfi_startproc
+ 423              		@ args = 0, pretend = 0, frame = 40
+ 424              		@ frame_needed = 0, uses_anonymous_args = 0
+ 425              		.loc 1 74 1 is_stmt 0 view .LVU61
+ 426 0000 30B5     		push	{r4, r5, lr}
+ 427              	.LCFI13:
+ 428              		.cfi_def_cfa_offset 12
+ 429              		.cfi_offset 4, -12
+ 430              		.cfi_offset 5, -8
+ 431              		.cfi_offset 14, -4
+ 432 0002 8BB0     		sub	sp, sp, #44
+ 433              	.LCFI14:
+ 434              		.cfi_def_cfa_offset 56
+ 435 0004 0546     		mov	r5, r0
+ 436              		.loc 1 75 2 is_stmt 1 view .LVU62
+ 437 0006 4FF0FF31 		mov	r1, #-1
+ 438 000a 1E4B     		ldr	r3, .L43
+ 439 000c 1868     		ldr	r0, [r3]
+ 440              	.LVL27:
+ 441              		.loc 1 75 2 is_stmt 0 view .LVU63
+ 442 000e 1E4B     		ldr	r3, .L43+4
+ 443 0010 9847     		blx	r3
+ 444              	.LVL28:
+ 445              		.loc 1 77 2 is_stmt 1 view .LVU64
+ 446              		.loc 1 78 2 view .LVU65
+ 447              		.loc 1 80 2 view .LVU66
+ 448              		.loc 1 80 4 is_stmt 0 view .LVU67
+ 449 0012 0DB1     		cbz	r5, .L42
+ 450              		.loc 1 78 11 view .LVU68
+ 451 0014 2024     		movs	r4, #32
+ 452 0016 1CE0     		b	.L35
+ 453              	.L42:
+ 454              	.LBB4:
+ 455              		.loc 1 82 6 is_stmt 1 view .LVU69
+ 456              		.loc 1 82 11 is_stmt 0 view .LVU70
+ 457 0018 3023     		movs	r3, #48
+ 458 001a 8DF80730 		strb	r3, [sp, #7]
+ 459              		.loc 1 83 6 is_stmt 1 view .LVU71
+ 460 001e 0023     		movs	r3, #0
+ 461 0020 4FF0FF32 		mov	r2, #-1
+ 462 0024 0DF10701 		add	r1, sp, #7
+ 463 0028 1848     		ldr	r0, .L43+8
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s 			page 9
+
+
+ 464 002a 0068     		ldr	r0, [r0]
+ 465 002c 184C     		ldr	r4, .L43+12
+ 466 002e A047     		blx	r4
+ 467              	.LVL29:
+ 468              	.LBE4:
+ 469 0030 1EE0     		b	.L36
+ 470              	.LVL30:
+ 471              	.L37:
+ 472              		.loc 1 88 4 view .LVU72
+ 473              		.loc 1 88 36 is_stmt 0 view .LVU73
+ 474 0032 184B     		ldr	r3, .L43+16
+ 475 0034 A3FB0523 		umull	r2, r3, r3, r5
+ 476 0038 DB08     		lsrs	r3, r3, #3
+ 477 003a 1A46     		mov	r2, r3
+ 478 003c 03EB8303 		add	r3, r3, r3, lsl #2
+ 479 0040 A5EB4303 		sub	r3, r5, r3, lsl #1
+ 480              		.loc 1 88 20 view .LVU74
+ 481 0044 013C     		subs	r4, r4, #1
+ 482              	.LVL31:
+ 483              		.loc 1 88 26 view .LVU75
+ 484 0046 3033     		adds	r3, r3, #48
+ 485              		.loc 1 88 20 view .LVU76
+ 486 0048 0AA9     		add	r1, sp, #40
+ 487 004a 2144     		add	r1, r1, r4
+ 488 004c 01F8203C 		strb	r3, [r1, #-32]
+ 489              		.loc 1 89 4 is_stmt 1 view .LVU77
+ 490              		.loc 1 89 12 is_stmt 0 view .LVU78
+ 491 0050 1546     		mov	r5, r2
+ 492              	.LVL32:
+ 493              	.L35:
+ 494              		.loc 1 86 8 is_stmt 1 view .LVU79
+ 495 0052 002D     		cmp	r5, #0
+ 496 0054 EDD1     		bne	.L37
+ 497 0056 09E0     		b	.L38
+ 498              	.LVL33:
+ 499              	.L39:
+ 500              	.LBB5:
+ 501              		.loc 1 94 4 discriminator 3 view .LVU80
+ 502 0058 0023     		movs	r3, #0
+ 503 005a 4FF0FF32 		mov	r2, #-1
+ 504 005e 02A9     		add	r1, sp, #8
+ 505 0060 2144     		add	r1, r1, r4
+ 506 0062 0A48     		ldr	r0, .L43+8
+ 507 0064 0068     		ldr	r0, [r0]
+ 508 0066 0A4D     		ldr	r5, .L43+12
+ 509 0068 A847     		blx	r5
+ 510              	.LVL34:
+ 511              		.loc 1 92 35 discriminator 3 view .LVU81
+ 512              		.loc 1 92 36 is_stmt 0 discriminator 3 view .LVU82
+ 513 006a 0134     		adds	r4, r4, #1
+ 514              	.LVL35:
+ 515              	.L38:
+ 516              		.loc 1 92 27 is_stmt 1 discriminator 1 view .LVU83
+ 517              		.loc 1 92 3 is_stmt 0 discriminator 1 view .LVU84
+ 518 006c 1F2C     		cmp	r4, #31
+ 519 006e F3D9     		bls	.L39
+ 520              	.LVL36:
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s 			page 10
+
+
+ 521              	.L36:
+ 522              		.loc 1 92 3 discriminator 1 view .LVU85
+ 523              	.LBE5:
+ 524              		.loc 1 97 2 is_stmt 1 view .LVU86
+ 525 0070 0023     		movs	r3, #0
+ 526 0072 1A46     		mov	r2, r3
+ 527 0074 1946     		mov	r1, r3
+ 528 0076 0348     		ldr	r0, .L43
+ 529 0078 0068     		ldr	r0, [r0]
+ 530 007a 054C     		ldr	r4, .L43+12
+ 531 007c A047     		blx	r4
+ 532              	.LVL37:
+ 533              		.loc 1 98 1 is_stmt 0 view .LVU87
+ 534 007e 0BB0     		add	sp, sp, #44
+ 535              	.LCFI15:
+ 536              		.cfi_def_cfa_offset 12
+ 537              		@ sp needed
+ 538 0080 30BD     		pop	{r4, r5, pc}
+ 539              	.L44:
+ 540 0082 00BF     		.align	2
+ 541              	.L43:
+ 542 0084 00000000 		.word	.LANCHOR2
+ 543 0088 00000000 		.word	xQueueSemaphoreTake
+ 544 008c 00000000 		.word	.LANCHOR0
+ 545 0090 00000000 		.word	xQueueGenericSend
+ 546 0094 CDCCCCCC 		.word	-858993459
+ 547              		.cfi_endproc
+ 548              	.LFE74:
+ 550              		.section	.bss.UART_TxMutexHandle,"aw",%nobits
+ 551              		.align	2
+ 552              		.set	.LANCHOR2,. + 0
+ 555              	UART_TxMutexHandle:
+ 556 0000 00000000 		.space	4
+ 557              		.section	.bss.UART_TxQueueHandle,"aw",%nobits
+ 558              		.align	2
+ 559              		.set	.LANCHOR0,. + 0
+ 562              	UART_TxQueueHandle:
+ 563 0000 00000000 		.space	4
+ 564              		.section	.bss.UART_TxTaskHandle,"aw",%nobits
+ 565              		.align	2
+ 566              		.set	.LANCHOR1,. + 0
+ 569              	UART_TxTaskHandle:
+ 570 0000 00000000 		.space	4
+ 571              		.text
+ 572              	.Letext0:
+ 573              		.file 2 "../c:\\users\\korisnik\\desktop\\etf\\4. godina\\mips\\gnu mcu\\arm-none-eabi-gcc-10.2.1-
+ 574              		.file 3 "../c:\\users\\korisnik\\desktop\\etf\\4. godina\\mips\\gnu mcu\\arm-none-eabi-gcc-10.2.1-
+ 575              		.file 4 "../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h"
+ 576              		.file 5 "../Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 577              		.file 6 "../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
+ 578              		.file 7 "../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h"
+ 579              		.file 8 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103x6.h"
+ 580              		.file 9 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 581              		.file 10 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 582              		.file 11 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
+ 583              		.file 12 "../Core/Inc/usart.h"
+ 584              		.file 13 "../<built-in>"
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s 			page 11
+
+
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s 			page 12
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 driver_uart.c
+C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s:16     .text.UART_TxTask:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s:23     .text.UART_TxTask:0000000000000000 UART_TxTask
+C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s:70     .text.UART_TxTask:000000000000002c $d
+C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s:79     .text.HAL_UART_TxCpltCallback:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s:86     .text.HAL_UART_TxCpltCallback:0000000000000000 HAL_UART_TxCpltCallback
+C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s:156    .text.HAL_UART_TxCpltCallback:000000000000003c $d
+C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s:163    .rodata.UART_Init.str1.4:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s:167    .text.UART_Init:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s:174    .text.UART_Init:0000000000000000 UART_Init
+C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s:229    .text.UART_Init:0000000000000034 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s:241    .text.UART_AsyncTxCharacter:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s:248    .text.UART_AsyncTxCharacter:0000000000000000 UART_AsyncTxCharacter
+C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s:300    .text.UART_AsyncTxCharacter:0000000000000034 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s:308    .text.UART_AsyncTxString:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s:315    .text.UART_AsyncTxString:0000000000000000 UART_AsyncTxString
+C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s:402    .text.UART_AsyncTxString:0000000000000044 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s:411    .text.UART_AsyncTxDecimal:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s:418    .text.UART_AsyncTxDecimal:0000000000000000 UART_AsyncTxDecimal
+C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s:542    .text.UART_AsyncTxDecimal:0000000000000084 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s:551    .bss.UART_TxMutexHandle:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s:555    .bss.UART_TxMutexHandle:0000000000000000 UART_TxMutexHandle
+C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s:558    .bss.UART_TxQueueHandle:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s:562    .bss.UART_TxQueueHandle:0000000000000000 UART_TxQueueHandle
+C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s:565    .bss.UART_TxTaskHandle:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccwwdps5.s:569    .bss.UART_TxTaskHandle:0000000000000000 UART_TxTaskHandle
+
+UNDEFINED SYMBOLS
+xQueueReceive
+huart1
+HAL_UART_Transmit_IT
+ulTaskNotifyTake
+vTaskNotifyGiveFromISR
+xTaskCreate
+xQueueGenericCreate
+xQueueCreateMutex
+xQueueSemaphoreTake
+xQueueGenericSend
+strlen
