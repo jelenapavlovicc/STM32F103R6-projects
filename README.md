@@ -66,3 +66,11 @@ Description:
 - Fan control using PWM based on temperature thresholds  
 - Bi-color LED behavior indicating safe or alert temperature states  
 - Real-time data display on both LCD and virtual terminal
+
+## Temperature Fan Control System
+
+Directory: STM32F103R6_temperature_fan_control
+Description:
+- Ambient temperature monitoring via LM35 sensor (ADC-based) 
+- Fan control using PWM based on temperature thresholds  
+- Real-time data display on both LCD and virtual terminal
