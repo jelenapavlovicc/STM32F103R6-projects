@@ -12,10 +12,6 @@ Following toolchain components are required:
 - **GNU ARM Toolchain (version 10.2.1)**
 - **GNU MCU Build Tools (version 4.2.1-2)**
 
-These tools can be downloaded from Google Drive:
-
-- [Download tools.zip from Google Drive](https://drive.google.com/drive/folders/1CaS04-ndH8tqtUvtaRrHiHTAvh6bvUi4?usp=drive_link)
-
 ## Weather Monitoring System
 
 Directory: STM32F103R6_temperature_azimuth_wind_speed
