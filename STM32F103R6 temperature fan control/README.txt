@@ -67,10 +67,6 @@ This project requires the following tools:
 - **GNU ARM Toolchain** (version 10.2.1)
 - **GNU MCU Build Tools** (version 4.2.1-2)
 
-These tools can be downloaded from Google Drive:
-
-- [Download tools.zip from Google Drive](https://drive.google.com/drive/folders/1CaS04-ndH8tqtUvtaRrHiHTAvh6bvUi4?usp=drive_link)
-
 ## Installation Steps
 
 - Extract the archives containing the required tools.
